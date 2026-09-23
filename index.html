@@ -1,6 +1,552 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SLO County Wheels | Mobile Wheel Repair in San Luis Obispo County</title>
-<meta name="description" content="Mobile wheel repair across San Luis Obispo County. Email a photo of the damage for a quote.">
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fafaf9;color:#111;font:17px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:24px}h1{font-size:clamp(32px,6vw,56px);letter-spacing:-.03em;margin:0 0 8px}a{color:inherit}</style></head>
-<body><main><h1>SLO County Wheels</h1><p>Mobile wheel repair across San Luis Obispo County.</p><p><a href="mailto:support@slocountywheels.com">support@slocountywheels.com</a></p></main></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SLO County Wheels | Mobile Wheel Repair, SLO County</title>
+<meta name="description" content="Mobile wheel repair at your home or workplace anywhere in San Luis Obispo County. Curb rash, scratches, refinishing. Email photos for a free quote.">
+<link rel="canonical" href="https://slocountywheels.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SLO County Wheels">
+<meta property="og:title" content="SLO County Wheels | Mobile Wheel Repair">
+<meta property="og:description" content="Wheel repair at your home or workplace anywhere in San Luis Obispo County. Email photos for a free quote.">
+<meta property="og:url" content="https://slocountywheels.com/">
+<meta name="theme-color" content="#f5f6f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0f11" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "SLO County Wheels",
+  "url": "https://slocountywheels.com/",
+  "email": "support@slocountywheels.com",
+  "description": "Mobile wheel repair at your home or workplace anywhere in San Luis Obispo County, California.",
+  "areaServed": [
+    {"@type": "City", "name": "San Luis Obispo, CA"},
+    {"@type": "City", "name": "Paso Robles, CA"},
+    {"@type": "City", "name": "Atascadero, CA"},
+    {"@type": "City", "name": "Templeton, CA"},
+    {"@type": "City", "name": "Santa Margarita, CA"},
+    {"@type": "City", "name": "Morro Bay, CA"},
+    {"@type": "City", "name": "Los Osos, CA"},
+    {"@type": "City", "name": "Cayucos, CA"},
+    {"@type": "City", "name": "Cambria, CA"},
+    {"@type": "City", "name": "Pismo Beach, CA"},
+    {"@type": "City", "name": "Grover Beach, CA"},
+    {"@type": "City", "name": "Arroyo Grande, CA"},
+    {"@type": "City", "name": "Oceano, CA"},
+    {"@type": "City", "name": "Nipomo, CA"},
+    {"@type": "City", "name": "Avila Beach, CA"}
+  ]
+}
+</script>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f5f6f7;
+  --band: #eceef1;
+  --ink: #111317;
+  --muted: #525964;
+  --line: #dcdfe4;
+  --line-strong: #c3c8cf;
+  --accent: #c2410c;
+  --accent-hover: #a9380a;
+  --on-accent: #ffffff;
+  --tire: #e6e8eb;
+  --wheel: #111317;
+  --wheel-soft: #9aa0a9;
+  --font: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --fs-label: 13px;
+  --fs-ui: 15px;
+  --fs-body: 17px;
+  --fs-lead: 20px;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --spring: cubic-bezier(.34, 1.45, .64, 1);
+  --radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e0f11;
+    --band: #15171a;
+    --ink: #eceef1;
+    --muted: #a1a7b1;
+    --line: #26292e;
+    --line-strong: #3a3e45;
+    --accent: #f07a3a;
+    --accent-hover: #f48f56;
+    --on-accent: #111317;
+    --tire: #1a1c20;
+    --wheel: #e3e6ea;
+    --wheel-soft: #5d636c;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 var(--fs-body)/1.6 var(--font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; }
+h1, h2, h3, p, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+main:focus { outline: none; }
+
+.skip {
+  position: absolute; left: 16px; top: -64px; z-index: 30;
+  padding: 12px 16px; background: var(--ink); color: var(--bg);
+  border-radius: var(--radius); text-decoration: none; font-weight: 500; font-size: var(--fs-ui);
+}
+.skip:focus { top: 12px; }
+
+.wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: clamp(24px, 4vw, 40px); }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap { display: flex; align-items: center; gap: 32px; min-height: 64px; }
+.brand { display: inline-flex; align-items: center; gap: 8px; min-width: 0; min-height: 44px; text-decoration: none; font-weight: 600; font-size: var(--fs-body); line-height: 1.2; letter-spacing: -0.015em; }
+.brand svg { width: 26px; height: 26px; flex: none; }
+.nav { display: flex; gap: 4px; margin-left: auto; }
+.nav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px;
+  color: var(--muted); text-decoration: none; font-size: var(--fs-ui); font-weight: 500;
+  transition: color 160ms ease;
+}
+.nav a:hover { color: var(--ink); }
+.menu { display: none; flex: none; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 0 24px; border-radius: var(--radius);
+  font: 500 var(--fs-body)/1 var(--font); letter-spacing: -0.005em; text-decoration: none; white-space: nowrap;
+  border: 1px solid transparent; cursor: pointer;
+  transition: transform 220ms var(--spring), background-color 160ms ease, border-color 160ms ease;
+}
+.btn:active { transform: scale(.97); transition-duration: 90ms; }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-ghost { color: var(--ink); border-color: var(--line-strong); background: transparent; }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-sm { min-height: 44px; padding: 0 16px; font-size: var(--fs-ui); }
+@media (hover: hover) { .btn:hover { transform: translateY(-1px); } .btn:active { transform: scale(.97); } }
+
+/* Hero */
+.hero { overflow-x: clip; padding-block: clamp(56px, 9vw, 96px) clamp(56px, 9vw, 112px); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .9fr); gap: clamp(40px, 5vw, 72px); align-items: center; }
+.eyebrow { font: 500 var(--fs-ui)/1.4 var(--font); color: var(--muted); margin-bottom: 24px; }
+.eyebrow span { white-space: nowrap; }
+.eyebrow span:first-child::after { content: " \00B7"; }
+h1 {
+  font-size: clamp(44px, 5.4vw, 76px); line-height: 1.02; font-weight: 600;
+  letter-spacing: -0.042em; text-wrap: balance;
+}
+.lead { margin-top: 24px; font-size: var(--fs-lead); line-height: 1.55; color: var(--muted); max-width: 40ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 40px; }
+.hero .email-row { justify-content: flex-start; margin-top: 16px; }
+.hero-wheel { width: 100%; max-width: 500px; justify-self: end; }
+.hero-wheel svg { display: block; width: 100%; height: auto; overflow: visible; }
+.hero-wheel svg * { vector-effect: non-scaling-stroke; }
+.spin { transform-box: view-box; transform-origin: 0 0; }
+
+/* Sections */
+section { padding-block: clamp(56px, 9vw, 112px); }
+.rule { border-top: 1px solid var(--line); }
+h2 {
+  font-size: clamp(32px, 4.2vw, 52px); line-height: 1.06; font-weight: 600;
+  letter-spacing: -0.035em; text-wrap: balance; max-width: 18ch;
+}
+.sub { margin-top: 24px; color: var(--muted); font-size: var(--fs-lead); line-height: 1.5; max-width: 52ch; text-wrap: pretty; }
+h3 { font-size: var(--fs-lead); line-height: 1.3; font-weight: 600; letter-spacing: -0.015em; }
+.lead, .services p, .steps p, .note, .faq p, .faq summary, .area-note { text-wrap: pretty; }
+
+/* Services */
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 64px; border-top: 1px solid var(--line); }
+.services li { padding: 32px 32px 40px 0; border-bottom: 1px solid var(--line); }
+.services li + li { padding-left: 32px; border-left: 1px solid var(--line); }
+.services li:nth-child(3n+1) { padding-left: 0; border-left: 0; }
+.services p { margin-top: 8px; color: var(--muted); font-size: var(--fs-body); max-width: 34ch; }
+
+/* Steps */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; margin-top: 64px; counter-reset: step; }
+.steps li { counter-increment: step; }
+.steps li::before {
+  content: "Step " counter(step);
+  display: block; padding-bottom: 16px; margin-bottom: 24px; border-bottom: 1px solid var(--line-strong);
+  font: 500 var(--fs-ui)/1.4 var(--font); color: var(--muted);
+}
+.steps h3 { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.025em; }
+.steps p { margin-top: 16px; color: var(--muted); font-size: var(--fs-body); max-width: 34ch; }
+.steps .tpl { margin-top: 24px; padding-left: 16px; border-left: 2px solid var(--line-strong); font-size: var(--fs-ui); line-height: 1.75; }
+
+/* Not on-site */
+.band { background: var(--band); }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.nope li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  padding-block: 24px; border-bottom: 1px solid var(--line-strong);
+  font-size: var(--fs-lead); font-weight: 500; letter-spacing: -0.015em;
+}
+.nope li:first-child { border-top: 1px solid var(--line-strong); }
+.note { margin-top: 24px; color: var(--muted); font-size: var(--fs-body); max-width: 46ch; }
+
+/* Area */
+.area { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; margin-top: 64px; }
+.area h3 { font: 500 var(--fs-ui)/1.4 var(--font); color: var(--muted); letter-spacing: 0; padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+.area li { font-size: var(--fs-lead); line-height: 1.8; letter-spacing: -0.01em; }
+.area-note { margin-top: 48px; color: var(--muted); font-size: var(--fs-body); }
+
+/* FAQ */
+.faq-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.faq-grid h2 { position: sticky; top: 112px; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq details:first-child { border-top: 1px solid var(--line); }
+.faq summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  min-height: 72px; padding-block: 24px; cursor: pointer; list-style: none;
+  font-size: var(--fs-lead); line-height: 1.4; font-weight: 500; letter-spacing: -0.01em;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: ""; flex: none; width: 12px; height: 12px;
+  background:
+    linear-gradient(currentColor, currentColor) center / 12px 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 12px no-repeat;
+  color: var(--muted);
+  transition: transform 260ms var(--spring);
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding-bottom: 24px; color: var(--muted); font-size: var(--fs-body); max-width: 58ch; }
+@media (forced-colors: active) { .faq summary::after { forced-color-adjust: none; color: CanvasText; } }
+
+/* Final CTA */
+.cta { text-align: center; }
+.cta h2 { margin-inline: auto; font-size: clamp(40px, 6vw, 72px); max-width: 14ch; letter-spacing: -0.045em; line-height: 1; }
+.cta .sub { margin-inline: auto; }
+.cta .actions { justify-content: center; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 16px; margin-top: 24px; }
+.email-row a, .site-footer .wrap > a:not(.brand) { display: inline-flex; align-items: center; min-height: 44px; }
+.email-row a { font: 500 var(--fs-ui)/1.4 var(--mono); color: var(--ink); text-underline-offset: 4px; text-decoration-color: var(--line-strong); overflow-wrap: anywhere; }
+.copy {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px;
+  border: 1px solid var(--line-strong); border-radius: var(--radius); background: transparent; color: var(--ink);
+  font: 500 var(--fs-ui)/1 var(--font); cursor: pointer;
+  transition: transform 220ms var(--spring), border-color 160ms ease;
+}
+.copy:hover { border-color: var(--ink); }
+.copy:active { transform: scale(.96); transition-duration: 90ms; }
+.copy.done { border-color: var(--accent); }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); padding-block: 48px 40px; font-size: var(--fs-ui); color: var(--muted); }
+.site-footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 24px 40px; align-items: center; }
+.site-footer .brand { color: var(--ink); }
+.site-footer a:not(.brand) { text-underline-offset: 4px; }
+.foot-meta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-top: 24px; border-top: 1px solid var(--line); }
+
+/* Motion: entrance only, once. The wheel rolls in; the caliper stays put. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .rise { animation: rise 800ms var(--ease-out) both; animation-delay: calc(var(--i, 0) * 70ms + 80ms); }
+  .roll { animation: roll 1500ms var(--ease-out) 120ms both; }
+  .roll .spin { animation: spin 1500ms var(--ease-out) 120ms both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+  @keyframes roll { from { opacity: 0; transform: translateX(10%); } }
+  @keyframes spin { from { transform: rotate(12deg); } }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .br-lg { display: none; }
+  .nav, .site-header .btn-desktop { display: none; }
+  .menu { display: block; margin-left: auto; }
+  .menu summary {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    list-style: none; cursor: pointer; font-size: var(--fs-ui); font-weight: 500;
+  }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu[open] summary { border-color: var(--ink); }
+  .menu-panel {
+    position: absolute; left: 0; right: 0; top: 100%;
+    max-height: calc(100vh - 64px); max-height: calc(100dvh - 64px);
+    overflow-y: auto; overscroll-behavior: contain;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    padding: 8px clamp(24px, 4vw, 40px) 24px;
+  }
+  .menu-panel a:not(.btn) {
+    display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid var(--line);
+    text-decoration: none; font-size: var(--fs-lead); font-weight: 500;
+  }
+  .menu-panel .btn { width: 100%; margin-top: 24px; }
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero-wheel { justify-self: start; max-width: 320px; margin-top: 16px; }
+  .services { grid-template-columns: 1fr 1fr; }
+  .services li:nth-child(n) { padding: 32px 24px 32px 0; border-left: 0; }
+  .services li:nth-child(2n) { padding-left: 24px; border-left: 1px solid var(--line); }
+  .steps { grid-template-columns: 1fr; gap: 48px; }
+  .split, .faq-grid { grid-template-columns: 1fr; }
+  .faq-grid h2 { position: static; }
+  .area { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+}
+@media (max-width: 600px) {
+  .hero-wheel { max-width: 288px; }
+  .site-header .wrap { gap: 16px; }
+  .eyebrow span { display: block; }
+  .eyebrow span:first-child::after { content: none; }
+  .actions .btn { flex: 1 1 100%; }
+  .services { grid-template-columns: 1fr; }
+  .services li:nth-child(n) { padding: 24px 0 32px; border-left: 0; }
+  .site-footer .wrap { grid-template-columns: 1fr; }
+}
+@media (max-width: 360px) {
+  .brand { font-size: var(--fs-ui); }
+  .area { grid-template-columns: 1fr; }
+}
+
+/* Reduced motion: no transitions, no transforms, no smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
+  .btn:hover, .btn:active, .copy:active { transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="SLO County Wheels, home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="32" r="21" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 23V12M40.6 29.2 51 25.8M37.3 39.3 43.8 48.2M26.7 39.3 20.2 48.2M23.4 29.2 13 25.8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="32" r="5" fill="var(--accent)"/></svg>
+      SLO County Wheels
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#area">Service area</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-sm btn-desktop" href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20quote&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%20%28year/make/model%29%3A%0D%0AWheel%20size%20and%20finish%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0APlease%20attach%202-3%20photos%20of%20each%20damaged%20wheel.%0D%0A">Get a quote</a>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav class="menu-panel" aria-label="Mobile">
+        <a href="#services">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#area">Service area</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary" href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20quote&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%20%28year/make/model%29%3A%0D%0AWheel%20size%20and%20finish%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0APlease%20attach%202-3%20photos%20of%20each%20damaged%20wheel.%0D%0A">Get a quote</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow rise" style="--i:0"><span>Mobile wheel repair</span> <span>San Luis Obispo County</span></p>
+        <h1 class="rise" style="--i:1">Wheel repair <br class="br-lg">that comes to you.</h1>
+        <p class="lead rise" style="--i:2">Curb rash, scratches and refinishing, done at your home or workplace anywhere in San&nbsp;Luis&nbsp;Obispo County.</p>
+        <div class="actions rise" style="--i:3">
+          <a class="btn btn-primary" href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20quote&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%20%28year/make/model%29%3A%0D%0AWheel%20size%20and%20finish%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0APlease%20attach%202-3%20photos%20of%20each%20damaged%20wheel.%0D%0A">Email photos for a quote</a>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+        <div class="email-row">
+          <a href="mailto:support@slocountywheels.com">support@slocountywheels.com</a>
+          <button class="copy" type="button" data-copy="support@slocountywheels.com"><span aria-live="polite">Copy email</span></button>
+        </div>
+      </div>
+      <div class="hero-wheel">
+        <svg class="roll" viewBox="-200 -200 400 400" role="img" aria-label="Line drawing of a five double-spoke alloy wheel">
+          <defs>
+            <path id="win" d="M35.9 -141.5A146 146 0 0 1 123.5 -77.9Q127.1 -71.9 120.9 -68.7L63.9 -39.2Q57.7 -36.0 53.7 -41.8A68 68 0 0 0 23.1 -63.9Q16.5 -66.0 17.6 -72.9L28.0 -136.2Q29.1 -143.1 35.9 -141.5ZM-5.7 -145.9A146 146 0 0 1 5.7 -145.9Q10.7 -145.6 9.6 -140.7L1.1 -100.9Q0.0 -96.0 -1.1 -100.9L-9.6 -140.7Q-10.7 -145.6 -5.7 -145.9ZM145.7 -9.6A146 146 0 0 1 112.2 93.4Q107.6 98.6 102.7 93.7L57.1 48.6Q52.1 43.7 56.3 38.1A68 68 0 0 0 68.0 2.3Q67.8 -4.7 74.8 -5.8L138.1 -15.5Q145.1 -16.5 145.7 -9.6ZM137.0 -50.5A146 146 0 0 1 140.5 -39.7Q141.8 -34.8 136.8 -34.3L96.3 -30.2Q91.3 -29.7 95.6 -32.2L130.9 -52.7Q135.2 -55.2 137.0 -50.5ZM54.1 135.6A146 146 0 0 1 -54.1 135.6Q-60.5 132.9 -57.4 126.6L-28.6 69.3Q-25.5 63.0 -18.9 65.3A68 68 0 0 0 18.9 65.3Q25.5 63.0 28.6 69.3L57.4 126.6Q60.5 132.9 54.1 135.6ZM90.4 114.7A146 146 0 0 1 81.1 121.4Q76.9 124.1 74.9 119.5L58.4 82.2Q56.4 77.7 60.2 81.0L90.5 108.2Q94.2 111.5 90.4 114.7ZM-112.2 93.4A146 146 0 0 1 -145.7 -9.6Q-145.1 -16.5 -138.1 -15.5L-74.8 -5.8Q-67.8 -4.7 -68.0 2.3A68 68 0 0 0 -56.3 38.1Q-52.1 43.7 -57.1 48.6L-102.7 93.7Q-107.6 98.6 -112.2 93.4ZM-81.1 121.4A146 146 0 0 1 -90.4 114.7Q-94.2 111.5 -90.5 108.2L-60.2 81.0Q-56.4 77.7 -58.4 82.2L-74.9 119.5Q-76.9 124.1 -81.1 121.4ZM-123.5 -77.9A146 146 0 0 1 -35.9 -141.5Q-29.1 -143.1 -28.0 -136.2L-17.6 -72.9Q-16.5 -66.0 -23.1 -63.9A68 68 0 0 0 -53.7 -41.8Q-57.7 -36.0 -63.9 -39.2L-120.9 -68.7Q-127.1 -71.9 -123.5 -77.9ZM-140.5 -39.7A146 146 0 0 1 -137.0 -50.5Q-135.2 -55.2 -130.9 -52.7L-95.6 -32.2Q-91.3 -29.7 -96.3 -30.2L-136.8 -34.3Q-141.8 -34.8 -140.5 -39.7Z"/>
+            <mask id="face"><circle r="152" fill="#fff"/><use href="#win" fill="#000"/></mask>
+          </defs>
+          <!-- tire -->
+          <circle r="196" fill="var(--tire)"/>
+          <circle r="172" fill="var(--bg)"/>
+          <!-- brake rotor and caliper: fixed to the car, seen through the spokes -->
+          <g fill="none" stroke="var(--wheel-soft)" stroke-width="1">
+            <circle r="130"/>
+            <circle r="92"/>
+          </g>
+          <g fill="var(--wheel-soft)">
+            <circle cx="12.3" cy="-117.4" r="2.6"/><circle cx="32.1" cy="-98.9" r="2.6"/><circle cx="59.0" cy="-102.2" r="2.6"/><circle cx="69.6" cy="-77.3" r="2.6"/><circle cx="95.5" cy="-69.4" r="2.6"/><circle cx="95.0" cy="-42.3" r="2.6"/><circle cx="115.4" cy="-24.5" r="2.6"/><circle cx="104.0" cy="0.0" r="2.6"/><circle cx="115.4" cy="24.5" r="2.6"/><circle cx="95.0" cy="42.3" r="2.6"/><circle cx="95.5" cy="69.4" r="2.6"/><circle cx="69.6" cy="77.3" r="2.6"/><circle cx="59.0" cy="102.2" r="2.6"/><circle cx="32.1" cy="98.9" r="2.6"/><circle cx="12.3" cy="117.4" r="2.6"/><circle cx="-10.9" cy="103.4" r="2.6"/><circle cx="-36.5" cy="112.2" r="2.6"/><circle cx="-52.0" cy="90.1" r="2.6"/><circle cx="-79.0" cy="87.7" r="2.6"/><circle cx="-84.1" cy="61.1" r="2.6"/><circle cx="-107.8" cy="48.0" r="2.6"/><circle cx="-101.7" cy="21.6" r="2.6"/><circle cx="-118.0" cy="0.0" r="2.6"/><circle cx="-101.7" cy="-21.6" r="2.6"/><circle cx="-107.8" cy="-48.0" r="2.6"/><circle cx="-84.1" cy="-61.1" r="2.6"/><circle cx="-79.0" cy="-87.7" r="2.6"/><circle cx="-52.0" cy="-90.1" r="2.6"/><circle cx="-36.5" cy="-112.2" r="2.6"/><circle cx="-10.9" cy="-103.4" r="2.6"/>
+          </g>
+          <path d="M51.7 -128.0A138 138 0 0 1 121.8 -64.8A17 17 0 0 1 91.8 -48.8A104 104 0 0 0 39.0 -96.4A17 17 0 0 1 51.7 -128.0Z" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.4" stroke-linejoin="round"/><path d="M56.8 -106.8A121 121 0 0 1 100.3 -67.7" fill="none" stroke="var(--bg)" stroke-width="1.2" stroke-linecap="round" opacity=".7"/>
+          <g class="spin">
+            <!-- wheel face, cut away at the spoke windows -->
+            <circle r="152" fill="var(--bg)" mask="url(#face)"/>
+            <!-- silhouette: tire and rim lip -->
+            <g fill="none" stroke="var(--wheel)" stroke-width="2">
+              <circle r="196"/>
+              <circle r="163"/>
+            </g>
+            <circle r="172" fill="none" stroke="var(--wheel)" stroke-width="1.4"/>
+            <circle r="186" fill="none" stroke="var(--wheel-soft)" stroke-width=".8"/>
+            <circle r="157.5" fill="none" stroke="var(--wheel-soft)" stroke-width=".8"/>
+            <!-- spokes and hub -->
+            <g fill="none" stroke="var(--wheel)" stroke-width="1.4" stroke-linejoin="round">
+              <use href="#win"/>
+              <circle r="58"/>
+            </g>
+            <!-- barrel edge, center cap, lug nuts -->
+            <g fill="none" stroke="var(--wheel)" stroke-width="1.1" stroke-linejoin="round">
+              <circle r="152"/>
+              <circle r="22"/>
+              <polygon points="31.5 -32.4 27.5 -25.4 19.5 -25.4 15.5 -32.4 19.5 -39.3 27.5 -39.3"/><circle cx="23.5" cy="-32.4" r="3.2"/>
+            <polygon points="46.0 12.4 42.0 19.3 34.0 19.3 30.0 12.4 34.0 5.4 42.0 5.4"/><circle cx="38.0" cy="12.4" r="3.2"/>
+            <polygon points="8.0 40.0 4.0 46.9 -4.0 46.9 -8.0 40.0 -4.0 33.1 4.0 33.1"/><circle cx="0.0" cy="40.0" r="3.2"/>
+            <polygon points="-30.0 12.4 -34.0 19.3 -42.0 19.3 -46.0 12.4 -42.0 5.4 -34.0 5.4"/><circle cx="-38.0" cy="12.4" r="3.2"/>
+            <polygon points="-15.5 -32.4 -19.5 -25.4 -27.5 -25.4 -31.5 -32.4 -27.5 -39.3 -19.5 -39.3"/><circle cx="-23.5" cy="-32.4" r="3.2"/>
+            </g>
+            <circle r="16" fill="none" stroke="var(--wheel-soft)" stroke-width="1"/>
+            <!-- valve stem -->
+            <rect x="-3" y="-171" width="6" height="12" rx="2" transform="rotate(216)" fill="var(--bg)" stroke="var(--wheel)" stroke-width="1.1"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="services" class="rule" aria-labelledby="services-title">
+    <div class="wrap">
+      <h2 id="services-title">What we fix at your place.</h2>
+      <p class="sub">Cosmetic wheel damage and refinishing, done on-site so your car never leaves your driveway or parking spot.</p>
+      <ul class="services" role="list">
+        <li><h3>Curb rash and scrapes</h3><p>Rim edges chewed up by curbs, repaired and refinished to blend with the rest of the wheel.</p></li>
+        <li><h3>Scratches and gouges</h3><p>Deeper marks on the face or spokes, filled and brought back to a clean finish.</p></li>
+        <li><h3>Factory color refinishing</h3><p>Painted wheels refinished with a color match to the original factory finish.</p></li>
+        <li><h3>Color changes and custom finishes</h3><p>Gloss black, satin, gunmetal, or the finish you have in mind.</p></li>
+        <li><h3>Lease-return repair</h3><p>Fix wheel damage before you turn the lease in.</p></li>
+        <li><h3>Brake caliper painting</h3><p>Calipers painted in the color you choose.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="how" class="rule" aria-labelledby="how-title">
+    <div class="wrap">
+      <h2 id="how-title">How it works</h2>
+      <p class="sub">No shop visit, no drop-off. It starts with a few photos.</p>
+      <ol class="steps" role="list">
+        <li><h3>Send photos</h3><p>Email 2-3 photos of each damaged wheel with your vehicle year, make and model, wheel size and city.</p><p class="tpl">Name:<br>City:<br>Vehicle (year/make/model):<br>Wheel size and finish:<br>What happened:</p></li>
+        <li><h3>Get a quote</h3><p>We look at the photos and reply with a quote. Quotes are free.</p></li>
+        <li><h3>We come to you</h3><p>The repair happens at your home or workplace, anywhere in San&nbsp;Luis&nbsp;Obispo County.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="nope-title">
+    <div class="wrap split">
+      <div>
+        <h2 id="nope-title">What we don’t do on-site.</h2>
+        <p class="note">Some repairs need a machine shop. Send photos and we’ll tell you straight whether your wheel can be fixed on-site or needs one.</p>
+      </div>
+      <ul class="nope" role="list">
+        <li>Bent-wheel straightening</li>
+        <li>Crack welding</li>
+        <li>Diamond-cut and CNC-machined faces</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="area" aria-labelledby="area-title">
+    <div class="wrap">
+      <h2 id="area-title">Anywhere in San&nbsp;Luis&nbsp;Obispo County.</h2>
+      <p class="sub">From Paso Robles to Nipomo, on the coast and inland.</p>
+      <div class="area">
+        <div><h3>North County</h3><ul role="list"><li>Paso Robles</li><li>Templeton</li><li>Atascadero</li><li>Santa Margarita</li></ul></div>
+        <div><h3>Coast</h3><ul role="list"><li>Cambria</li><li>Cayucos</li><li>Morro Bay</li><li>Los Osos</li></ul></div>
+        <div><h3>Central</h3><ul role="list"><li>San&nbsp;Luis&nbsp;Obispo</li><li>Avila Beach</li></ul></div>
+        <div><h3>South County</h3><ul role="list"><li>Pismo Beach</li><li>Grover Beach</li><li>Arroyo Grande</li><li>Oceano</li><li>Nipomo</li></ul></div>
+      </div>
+      <p class="area-note">Somewhere else in the county? Tell us your city when you email.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="rule" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <h2 id="faq-title">Common questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Is the repair really done at my place?</summary>
+          <p>Yes. Every service listed under Services is done at your home or workplace, anywhere in San&nbsp;Luis&nbsp;Obispo County.</p>
+        </details>
+        <details>
+          <summary>How much does it cost?</summary>
+          <p>It depends on the wheel and the damage, so we quote each job from your photos. Quotes are free.</p>
+        </details>
+        <details>
+          <summary>What should I send for a quote?</summary>
+          <p>2-3 photos of each damaged wheel, plus your vehicle year, make and model, the wheel size, and your city. Email it all to support@slocountywheels.com.</p>
+        </details>
+        <details>
+          <summary>Can you fix a bent or cracked wheel?</summary>
+          <p>Not on-site. Straightening, crack welding and diamond-cut faces need a machine shop. Send photos and we’ll tell you straight whether yours can be fixed on-site or needs a machine shop.</p>
+        </details>
+        <details>
+          <summary>Can you fix my wheels before a lease return?</summary>
+          <p>Yes. Send photos of the damage and we’ll quote the repair so the wheels are sorted before you turn the car in.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta rule" aria-labelledby="cta-title">
+    <div class="wrap">
+      <h2 id="cta-title">Send photos. Get a quote.</h2>
+      <p class="sub">Email 2-3 photos of each damaged wheel. We’ll reply with a free quote.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20quote&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%20%28year/make/model%29%3A%0D%0AWheel%20size%20and%20finish%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0APlease%20attach%202-3%20photos%20of%20each%20damaged%20wheel.%0D%0A">Email photos for a quote</a>
+      </div>
+      <div class="email-row">
+        <a href="mailto:support@slocountywheels.com">support@slocountywheels.com</a>
+        <button class="copy" type="button" data-copy="support@slocountywheels.com"><span aria-live="polite">Copy email</span></button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="SLO County Wheels, back to top">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="32" r="21" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 23V12M40.6 29.2 51 25.8M37.3 39.3 43.8 48.2M26.7 39.3 20.2 48.2M23.4 29.2 13 25.8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="32" r="5" fill="var(--accent)"/></svg>
+      SLO County Wheels
+    </a>
+    <a href="mailto:support@slocountywheels.com">support@slocountywheels.com</a>
+    <div class="foot-meta">
+      <span>Mobile wheel repair · San&nbsp;Luis&nbsp;Obispo County, CA</span>
+      <span>© 2026 SLO County Wheels</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.menu-panel a').forEach(a => a.addEventListener('click', () => a.closest('details').open = false));
+document.addEventListener('keydown', e => { const m = document.querySelector('.menu[open]'); if (e.key === 'Escape' && m) { m.open = false; m.querySelector('summary').focus(); } });
+document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+  const t = b.dataset.copy, label = b.firstElementChild; let ok = false;
+  try { await navigator.clipboard.writeText(t); ok = true; } catch (e) { const x = document.createElement('textarea'); x.value = t; x.setAttribute('readonly', ''); x.style.cssText = 'position:fixed;top:0;opacity:0'; document.body.append(x); x.select(); try { ok = document.execCommand('copy'); } catch (_) {} x.remove(); b.focus(); }
+  if (!ok) getSelection().selectAllChildren(b.previousElementSibling);
+  label.textContent = ok ? 'Copied' : 'Selected. Copy it manually'; b.classList.toggle('done', ok);
+  clearTimeout(b.t); b.t = setTimeout(() => { label.textContent = 'Copy email'; b.classList.remove('done'); }, ok ? 2200 : 6000);
+}));
+</script>
+</body>
+</html>
