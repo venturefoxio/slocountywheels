@@ -679,7 +679,7 @@ input[type="file"].input::file-selector-button {
           <input type="hidden" name="_subject" value="New quote request | slocountywheels.com">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://slocountywheels.com/?sent=1#contact">
+          <input type="hidden" name="_next" value="http://slocountywheels.com/?sent=1#contact">
           <div class="hp" aria-hidden="true"><label for="q-honey">Leave this empty</label><input type="text" id="q-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
 
           <p class="req-note">Fields marked <span aria-hidden="true">*</span><span class="sr">with an asterisk</span> are required.</p>
@@ -863,6 +863,8 @@ input[type="file"].input::file-selector-button {
 
   /* Contact form */
   const quote = $('#quote-form'), sent = $('#sent');
+  // Return to the same scheme/host the visitor used (http until the TLS cert exists, https after).
+  if (/^https?:$/.test(location.protocol)) quote.querySelector('[name="_next"]').value = location.origin + '/?sent=1#contact';
   wire(quote);
 
   /* Photos: one picker, many photos. Each pick adds to the list; each photo can be removed.
