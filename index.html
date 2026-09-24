@@ -345,6 +345,15 @@ input[type="file"].input::file-selector-button {
 .help { font-size: 14px; line-height: 1.5; color: var(--muted); }
 .err { font-size: 14px; line-height: 1.4; color: var(--danger); font-weight: 500; }
 .err:empty { display: none; }
+.thumbs { display: grid; gap: 8px; }
+.thumb { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 6px 6px 6px 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--field); }
+.thumb img { width: 48px; height: 48px; object-fit: cover; background: var(--bg-2); }
+.thumb-name { font-size: 15px; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.thumb-size { display: block; font-size: 13px; color: var(--muted); }
+.thumb .icon-btn { margin: 0; }
+.photo-status .help:empty { display: none; }
+.video-note { display: grid; gap: 8px; justify-items: start; padding-top: 24px; border-top: 1px solid var(--line); }
+.video-note .btn { margin-top: 8px; }
 .form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
 .form-foot .help { max-width: 34ch; }
 .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
@@ -619,7 +628,11 @@ input[type="file"].input::file-selector-button {
         </details>
         <details>
           <summary>What should I send for a quote?</summary>
-          <p>A clear photo of each damaged wheel, plus your vehicle year, make and model, the wheel size, and your city. Attach a photo in the form below, or email several to support@slocountywheels.com.</p>
+          <p>A clear photo of each damaged wheel, plus your vehicle year, make and model, the wheel size, and your city. Attach photos in the form below, or email them to support@slocountywheels.com.</p>
+        </details>
+        <details>
+          <summary>Can I send a video?</summary>
+          <p>Yes, by email. Videos are too large for the form, so tap Email a video in the form below, or send it to support@slocountywheels.com. On iPhone, the Mail app offers Mail Drop for large videos; it needs iCloud turned on. The Gmail app sends large files as a Google Drive link automatically.</p>
         </details>
         <details>
           <summary><span>Can you fix bent, cracked or <span class="nw">diamond-cut</span> wheels?</span></summary>
@@ -703,10 +716,19 @@ input[type="file"].input::file-selector-button {
             <textarea class="input" id="q-message" name="message" rows="5" placeholder="Which wheels, the damage, the wheel size and finish."></textarea>
           </div>
           <div class="field full">
-            <label for="q-photo">Photo</label>
+            <label for="q-photo">Photos</label>
             <input class="input" id="q-photo" name="attachment" type="file" accept="image/*" aria-describedby="q-photo-help q-photo-err">
-            <p class="help" id="q-photo-help">One image, up to 10&nbsp;MB. More photos? Email them to support@slocountywheels.com.</p>
-            <p class="err" id="q-photo-err"></p>
+            <p class="help" id="q-photo-help">Photos: up to 9&nbsp;MB total. Videos: use Email a video.</p>
+            <ul class="thumbs" id="q-photo-list" role="list" aria-label="Chosen photos" hidden></ul>
+            <div class="photo-status" aria-live="polite">
+              <p class="help" id="q-photo-total"></p>
+              <p class="err" id="q-photo-err"></p>
+            </div>
+          </div>
+          <div class="full video-note">
+            <h3>Sending a video?</h3>
+            <p class="help">Videos are too large for web forms. Email it instead: your iPhone sends large videos with Mail Drop.</p>
+            <a class="btn btn-line btn-sm" href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20video&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0AAttach%20your%20video%20from%20Photos.%20If%20it%20is%20large%2C%20tap%20Use%20Mail%20Drop%20when%20asked.%0D%0A">Email a video</a>
           </div>
           <div class="full form-foot">
             <button class="btn btn-primary" type="submit">Send quote request</button>
@@ -800,6 +822,9 @@ input[type="file"].input::file-selector-button {
     range.setAttribute('aria-valuetext', `${v} percent before, ${100 - v} percent after`);
   });
 
+  const MAX = 9 * 1024 * 1024; // FormSubmit caps a submission at 10 MB incl. text fields; 9 MiB leaves headroom
+  const size = b => b < 1048576 ? Math.max(1, Math.round(b / 1024)) + ' KB' : (Math.ceil(b / 104857.6) / 10).toFixed(1) + ' MB'; // rounds up, so an over-limit total never reads as 10.0
+
   /* Inline validation shared by both forms */
   const msgFor = el => {
     if (el.validity.valueMissing) return el.type === 'email' ? 'Enter your email address.' : `Enter your ${el.name === 'message' ? 'message' : el.name}.`;
@@ -809,7 +834,12 @@ input[type="file"].input::file-selector-button {
   const check = el => {
     const err = document.getElementById(el.id + '-err'); if (!err) return true;
     let m = msgFor(el);
-    if (!m && el.type === 'file' && el.files[0] && el.files[0].size > 10 * 1024 * 1024) m = 'That photo is over 10 MB. Choose a smaller one, or email it to us.';
+    if (!m && el.type === 'file') {
+      const total = [...el.files].reduce((t, f) => t + f.size, 0);
+      if (total > MAX) m = el.files.length > 1
+        ? `These photos add up to ${size(total)}. The limit is 9 MB total. Remove a photo, or email them to us.`
+        : 'That photo is over 9 MB. Choose a smaller one, or email it to us.';
+    }
     err.textContent = m; m ? el.setAttribute('aria-invalid', 'true') : el.removeAttribute('aria-invalid');
     return !m;
   };
@@ -830,8 +860,70 @@ input[type="file"].input::file-selector-button {
   /* Contact form */
   const quote = $('#quote-form'), sent = $('#sent');
   wire(quote);
-  quote.addEventListener('submit', e => { if (!validate(quote)) e.preventDefault(); else quote.querySelector('[type=submit]').textContent = 'Sending…'; });
-  addEventListener('pageshow', e => { if (e.persisted) quote.querySelector('[type=submit]').textContent = 'Send quote request'; });
+
+  /* Photos: one picker, many photos. Each pick adds to the list; each photo can be removed.
+     FormSubmit rejects name="attachment[]" (HTTP 500), so on submit every photo gets its own
+     field: attachment, attachment2, attachment3... Without DataTransfer the picker just sends as is. */
+  const pInput = $('#q-photo'), pList = $('#q-photo-list'), pTotal = $('#q-photo-total');
+  // Needs a writable input.files, not just DataTransfer; without it the picker stays single-file (a repeated
+  // same-name field is silently dropped by FormSubmit).
+  const canEdit = (() => { try { const dt = new DataTransfer(), t = document.createElement('input'); dt.items.add(new File([''], 'x')); t.type = 'file'; t.files = dt.files; return t.files.length === 1; } catch (e) { return false; } })();
+  if (canEdit) pInput.multiple = true;
+  let photos = [];
+  const toFiles = list => { const dt = new DataTransfer(); list.forEach(f => dt.items.add(f)); return dt.files; };
+  const renderPhotos = () => {
+    $$('img', pList).forEach(i => URL.revokeObjectURL(i.src));
+    pList.textContent = '';
+    photos.forEach((f, i) => {
+      const li = document.createElement('li'); li.className = 'thumb';
+      const img = document.createElement('img'); img.alt = ''; img.src = URL.createObjectURL(f);
+      const txt = document.createElement('span'); txt.className = 'thumb-name'; txt.textContent = f.name;
+      const sz = document.createElement('span'); sz.className = 'thumb-size'; sz.textContent = size(f.size); txt.append(sz);
+      li.append(img, txt);
+      if (canEdit) {
+        const b = document.createElement('button'); b.type = 'button'; b.className = 'icon-btn'; b.dataset.i = i;
+        b.setAttribute('aria-label', `Remove ${f.name}`);
+        b.innerHTML = '<svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>';
+        li.append(b);
+      }
+      pList.append(li);
+    });
+    pList.hidden = !photos.length;
+    const total = photos.reduce((t, f) => t + f.size, 0);
+    pTotal.textContent = photos.length ? `${photos.length} photo${photos.length > 1 ? 's' : ''}, ${size(total)} of 9 MB` : '';
+    check(pInput);
+  };
+  pInput.addEventListener('change', () => {
+    const picked = [...pInput.files];
+    if (canEdit) {
+      const key = f => f.name + f.size + f.lastModified;
+      photos = photos.concat(picked.filter(f => !photos.some(p => key(p) === key(f))));
+      pInput.files = toFiles(photos);
+    } else photos = picked;
+    renderPhotos();
+  });
+  pList.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const i = +b.dataset.i;
+    photos.splice(i, 1); pInput.files = toFiles(photos); renderPhotos();
+    const next = $$('button', pList); (next[Math.min(i, next.length - 1)] || pInput).focus();
+  });
+  const unsplit = () => { $$('.photo-part', quote).forEach(n => n.remove()); pInput.name = 'attachment'; };
+  const split = () => {
+    unsplit();
+    if (!canEdit || photos.length < 2) return;
+    try {
+      photos.forEach((f, i) => {
+        const el = document.createElement('input');
+        el.type = 'file'; el.hidden = true; el.className = 'photo-part'; el.name = i ? 'attachment' + (i + 1) : 'attachment';
+        el.files = toFiles([f]); if (el.files.length !== 1) throw new Error('files not writable'); quote.append(el);
+      });
+      pInput.removeAttribute('name');
+    } catch (e) { unsplit(); }
+  };
+
+  quote.addEventListener('submit', e => { if (!validate(quote)) return e.preventDefault(); split(); quote.querySelector('[type=submit]').textContent = 'Sending…'; });
+  addEventListener('pageshow', e => { if (e.persisted) { unsplit(); quote.querySelector('[type=submit]').textContent = 'Send quote request'; } });
   if (new URLSearchParams(location.search).get('sent') === '1') {
     quote.hidden = true; sent.hidden = false;
     history.replaceState(null, '', location.pathname + '#contact');
