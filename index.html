@@ -4,19 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SLO County Wheels | Mobile Wheel Repair, SLO County</title>
-<meta name="description" content="Mobile wheel repair at your home or workplace anywhere in San Luis Obispo County. Curb rash, scratches, refinishing. Email photos for a free quote.">
+<meta name="description" content="Mobile wheel repair at your home or workplace anywhere in San Luis Obispo County. Curb rash, scratches, refinishing. Send photos for a free quote.">
 <link rel="canonical" href="https://slocountywheels.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SLO County Wheels">
 <meta property="og:title" content="SLO County Wheels | Mobile Wheel Repair">
-<meta property="og:description" content="Wheel repair at your home or workplace anywhere in San Luis Obispo County. Email photos for a free quote.">
+<meta property="og:description" content="Wheel repair at your home or workplace anywhere in San Luis Obispo County. Send photos for a free quote.">
 <meta property="og:url" content="https://slocountywheels.com/">
-<meta name="theme-color" content="#f5f6f7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e0f11" media="(prefers-color-scheme: dark)">
+<meta property="og:image" content="https://slocountywheels.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gloved hands seating a multi-spoke alloy wheel onto a car's hub.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#efede8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" fetchpriority="high"
+  imagesrcset="https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w, https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000 2000w, https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2800 2800w, https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=3600 3600w"
+  imagesizes="(max-width: 600px) 900px, (max-width: 900px) 180vw, 127vw">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -24,6 +33,8 @@
   "name": "SLO County Wheels",
   "url": "https://slocountywheels.com/",
   "email": "support@slocountywheels.com",
+  "image": "https://slocountywheels.com/assets/email-logo.png",
+  "logo": "https://slocountywheels.com/assets/email-logo.png",
   "description": "Mobile wheel repair at your home or workplace anywhere in San Luis Obispo County, California.",
   "areaServed": [
     {"@type": "City", "name": "San Luis Obispo, CA"},
@@ -44,286 +55,422 @@
   ]
 }
 </script>
+<script>document.documentElement.classList.add('js')</script>
 <style>
+/* Shape rule: photos square-cornered; buttons, launcher and chips are pills; inputs 10px; floating panel 16px. */
 :root {
   color-scheme: light dark;
-  --bg: #f5f6f7;
-  --band: #eceef1;
-  --ink: #111317;
-  --muted: #525964;
-  --line: #dcdfe4;
-  --line-strong: #c3c8cf;
+  --bg: #efede8;
+  --bg-2: #e7e4dd;
+  --field: #f8f7f4;
+  --ink: #1a1917;
+  --muted: #5b574f;
+  --line: #d6d2c8;
+  --line-strong: #b3ada1;
   --accent: #c2410c;
-  --accent-hover: #a9380a;
+  --accent-hover: #a5370a;
   --on-accent: #ffffff;
-  --tire: #e6e8eb;
-  --wheel: #111317;
-  --wheel-soft: #9aa0a9;
-  --font: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --fs-label: 13px;
-  --fs-ui: 15px;
-  --fs-body: 17px;
-  --fs-lead: 20px;
+  --danger: #a3261b;
+  --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --ease-out: cubic-bezier(.16, 1, .3, 1);
-  --spring: cubic-bezier(.34, 1.45, .64, 1);
-  --radius: 8px;
+  --grade: sepia(.2) saturate(.78) contrast(1.04) brightness(.97);
+  --field-line: #857f72;
+  --gutter: clamp(20px, 5vw, 56px);
+  --section: clamp(88px, 11vw, 168px);
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0e0f11;
-    --band: #15171a;
-    --ink: #eceef1;
-    --muted: #a1a7b1;
-    --line: #26292e;
-    --line-strong: #3a3e45;
+    --bg: #161513;
+    --bg-2: #1e1d1a;
+    --field: #1f1e1b;
+    --ink: #ece9e3;
+    --muted: #a8a397;
+    --line: #2f2d29;
+    --line-strong: #4a463f;
     --accent: #f07a3a;
-    --accent-hover: #f48f56;
-    --on-accent: #111317;
-    --tire: #1a1c20;
-    --wheel: #e3e6ea;
-    --wheel-soft: #5d636c;
+    --accent-hover: #f4915a;
+    --on-accent: #161513;
+    --danger: #ff8a7a;
+    --grade: sepia(.2) saturate(.78) contrast(1.04) brightness(.92);
+    --field-line: #736e64;
   }
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+html { scroll-padding-top: 88px; -webkit-text-size-adjust: 100%; }
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 400 var(--fs-body)/1.6 var(--font);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 17px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01" 0;
 }
 a { color: inherit; }
-h1, h2, h3, p, ul, ol { margin: 0; }
+h1, h2, h3, p, ul, ol, figure, fieldset { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+fieldset { border: 0; padding: 0; min-width: 0; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 main:focus { outline: none; }
+[hidden] { display: none !important; }
+.nw { white-space: nowrap; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 
 .skip {
-  position: absolute; left: 16px; top: -64px; z-index: 30;
-  padding: 12px 16px; background: var(--ink); color: var(--bg);
-  border-radius: var(--radius); text-decoration: none; font-weight: 500; font-size: var(--fs-ui);
+  position: absolute; left: 16px; top: -80px; z-index: 50;
+  padding: 12px 20px; background: var(--ink); color: var(--bg);
+  border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 15px;
 }
 .skip:focus { top: 12px; }
 
-.wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: clamp(24px, 4vw, 40px); }
+.wrap { width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: var(--gutter); }
+
+/* Type */
+h1, h2, .serif { font-family: var(--serif); font-weight: 400; font-optical-sizing: auto; }
+h1 {
+  font-size: clamp(44px, 6vw, 88px); line-height: 1.02; letter-spacing: -0.025em;
+  text-wrap: balance; max-width: 14ch;
+}
+h1 em, h2 em { font-style: italic; }
+h1 em { display: inline-block; padding-bottom: .06em; }
+h2 {
+  font-size: clamp(36px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -0.02em;
+  text-wrap: balance; max-width: 16ch;
+}
+h3 { font: 500 18px/1.35 var(--sans); letter-spacing: -0.01em; }
+.sub { margin-top: 24px; color: var(--muted); font-size: 19px; line-height: 1.55; max-width: 44ch; text-wrap: pretty; }
+p { text-wrap: pretty; }
+html:not(.js) .js-hint { display: none; }
 
 /* Header */
 .site-header {
-  position: sticky; top: 0; z-index: 20;
-  background: var(--bg);
-  background: color-mix(in srgb, var(--bg) 86%, transparent);
-  -webkit-backdrop-filter: saturate(160%) blur(12px);
-  backdrop-filter: saturate(160%) blur(12px);
-  border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 30;
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  -webkit-backdrop-filter: saturate(160%) blur(14px); backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
 }
-.site-header .wrap { display: flex; align-items: center; gap: 32px; min-height: 64px; }
-.brand { display: inline-flex; align-items: center; gap: 8px; min-width: 0; min-height: 44px; text-decoration: none; font-weight: 600; font-size: var(--fs-body); line-height: 1.2; letter-spacing: -0.015em; }
+.site-header .wrap { display: flex; align-items: center; gap: 32px; min-height: 68px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; font: 600 17px/1.2 var(--sans); letter-spacing: -0.015em; white-space: nowrap; }
 .brand svg { width: 26px; height: 26px; flex: none; }
 .nav { display: flex; gap: 4px; margin-left: auto; }
 .nav a {
   display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px;
-  color: var(--muted); text-decoration: none; font-size: var(--fs-ui); font-weight: 500;
+  color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500;
   transition: color 160ms ease;
 }
 .nav a:hover { color: var(--ink); }
-.menu { display: none; flex: none; }
+.menu { display: none; }
 
 /* Buttons */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 48px; padding: 0 24px; border-radius: var(--radius);
-  font: 500 var(--fs-body)/1 var(--font); letter-spacing: -0.005em; text-decoration: none; white-space: nowrap;
-  border: 1px solid transparent; cursor: pointer;
-  transition: transform 220ms var(--spring), background-color 160ms ease, border-color 160ms ease;
+  min-height: 52px; padding: 0 28px; border-radius: 999px;
+  font: 500 16px/1 var(--sans); letter-spacing: -0.005em; text-decoration: none; white-space: nowrap;
+  border: 1px solid transparent; cursor: pointer; color: inherit; background: none;
+  transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
-.btn:active { transform: scale(.97); transition-duration: 90ms; }
+.btn:active { transform: scale(.97); }
 .btn-primary { background: var(--accent); color: var(--on-accent); }
 .btn-primary:hover { background: var(--accent-hover); }
-.btn-ghost { color: var(--ink); border-color: var(--line-strong); background: transparent; }
-.btn-ghost:hover { border-color: var(--ink); }
-.btn-sm { min-height: 44px; padding: 0 16px; font-size: var(--fs-ui); }
-@media (hover: hover) { .btn:hover { transform: translateY(-1px); } .btn:active { transform: scale(.97); } }
+.btn-line { border-color: var(--line-strong); }
+.btn-line:hover { border-color: var(--ink); }
+.btn-sm { min-height: 44px; padding: 0 20px; font-size: 15px; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+/* Photos: one warm grade, square corners */
+.ph { position: relative; overflow: hidden; background: var(--bg-2); }
+.ph img { width: 100%; height: 100%; object-fit: cover; filter: var(--grade); }
+.ph::after { content: ""; position: absolute; inset: 0; background: #8a5a2b; mix-blend-mode: soft-light; opacity: .12; pointer-events: none; }
 
 /* Hero */
-.hero { overflow-x: clip; padding-block: clamp(56px, 9vw, 96px) clamp(56px, 9vw, 112px); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .9fr); gap: clamp(40px, 5vw, 72px); align-items: center; }
-.eyebrow { font: 500 var(--fs-ui)/1.4 var(--font); color: var(--muted); margin-bottom: 24px; }
-.eyebrow span { white-space: nowrap; }
-.eyebrow span:first-child::after { content: " \00B7"; }
-h1 {
-  font-size: clamp(44px, 5.4vw, 76px); line-height: 1.02; font-weight: 600;
-  letter-spacing: -0.042em; text-wrap: balance;
-}
-.lead { margin-top: 24px; font-size: var(--fs-lead); line-height: 1.55; color: var(--muted); max-width: 40ch; }
-.actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 40px; }
-.hero .email-row { justify-content: flex-start; margin-top: 16px; }
-.hero-wheel { width: 100%; max-width: 500px; justify-self: end; }
-.hero-wheel svg { display: block; width: 100%; height: auto; overflow: visible; }
-.hero-wheel svg * { vector-effect: non-scaling-stroke; }
-.spin { transform-box: view-box; transform-origin: 0 0; }
+.hero { padding-top: clamp(32px, 4vw, 56px); }
+.eyebrow { font: 500 14px/1.4 var(--sans); color: var(--muted); letter-spacing: 0.01em; margin-bottom: 20px; }
+.hero-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px; margin-top: 28px; }
+.lead { font-size: 19px; line-height: 1.55; color: var(--muted); max-width: 36ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-media { margin-top: clamp(32px, 4vw, 56px); aspect-ratio: 21 / 9; max-height: 78vh; width: 100%; }
+/* Region crops: the img box is sized so a chosen part of the photo fills the frame.
+   Each region keeps out the waistband lettering, the impact wrench and the face. */
+.crop img { position: absolute; max-width: none; }
+.hero-media img { width: 126.1%; height: 196.1%; left: -26.1%; top: -29.4%; } /* x 21-100%, y 15-66% */
+/* The settle zoom lives on a wrapper so it never shares a transform with the GSAP parallax on the img. */
+.hero-zoom { position: absolute; inset: 0; }
+@media (prefers-reduced-motion: no-preference) { .hero-zoom { animation: settle 1.6s var(--ease-out) both; } }
+@keyframes settle { from { scale: 1.06; } }
 
-/* Sections */
-section { padding-block: clamp(56px, 9vw, 112px); }
-.rule { border-top: 1px solid var(--line); }
-h2 {
-  font-size: clamp(32px, 4.2vw, 52px); line-height: 1.06; font-weight: 600;
-  letter-spacing: -0.035em; text-wrap: balance; max-width: 18ch;
-}
-.sub { margin-top: 24px; color: var(--muted); font-size: var(--fs-lead); line-height: 1.5; max-width: 52ch; text-wrap: pretty; }
-h3 { font-size: var(--fs-lead); line-height: 1.3; font-weight: 600; letter-spacing: -0.015em; }
-.lead, .services p, .steps p, .note, .faq p, .faq summary, .area-note { text-wrap: pretty; }
+section { padding-block: var(--section); }
 
 /* Services */
-.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 64px; border-top: 1px solid var(--line); }
-.services li { padding: 32px 32px 40px 0; border-bottom: 1px solid var(--line); }
-.services li + li { padding-left: 32px; border-left: 1px solid var(--line); }
-.services li:nth-child(3n+1) { padding-left: 0; border-left: 0; }
-.services p { margin-top: 8px; color: var(--muted); font-size: var(--fs-body); max-width: 34ch; }
+.services-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(48px, 7vw, 120px); align-items: start; }
+.svc { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-top: 64px; }
+.svc li { padding: 24px 0 32px; border-top: 1px solid var(--line); }
+.svc p { margin-top: 6px; color: var(--muted); font-size: 16px; line-height: 1.55; max-width: 32ch; }
+.svc-photo { aspect-ratio: 4 / 5; position: sticky; top: 104px; }
+.svc-photo img { width: 208.3%; height: 111.1%; left: -41.7%; top: -8.9%; } /* x 20-68%, y 8-98%: spray-gun lettering (x 73%+) stays out */
 
-/* Steps */
-.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; margin-top: 64px; counter-reset: step; }
-.steps li { counter-increment: step; }
-.steps li::before {
-  content: "Step " counter(step);
-  display: block; padding-bottom: 16px; margin-bottom: 24px; border-bottom: 1px solid var(--line-strong);
-  font: 500 var(--fs-ui)/1.4 var(--font); color: var(--muted);
-}
-.steps h3 { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.025em; }
-.steps p { margin-top: 16px; color: var(--muted); font-size: var(--fs-body); max-width: 34ch; }
-.steps .tpl { margin-top: 24px; padding-left: 16px; border-left: 2px solid var(--line-strong); font-size: var(--fs-ui); line-height: 1.75; }
+/* Gallery */
+.gallery { padding-block: 0; }
+.gal { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 24px); align-items: start; }
+.gal .g1 { grid-column: 1 / span 3; aspect-ratio: 3 / 4; margin-top: clamp(40px, 6vw, 96px); }
+.gal .g1 img { object-position: 50% 45%; }
+.gal .g2 { grid-column: 4 / span 6; aspect-ratio: 3 / 2; }
+.gal .g2 img { width: 137%; height: 115.6%; left: -31.5%; top: -15.6%; } /* x 23-96%, y 13.5-100%: tool-chest nameplates (x 12-21%) and pillar sticker stay out */
+.gal .g3 { grid-column: 10 / span 3; aspect-ratio: 2 / 3; margin-top: clamp(24px, 3vw, 48px); }
 
-/* Not on-site */
-.band { background: var(--band); }
-.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
-.nope li {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-  padding-block: 24px; border-bottom: 1px solid var(--line-strong);
-  font-size: var(--fs-lead); font-weight: 500; letter-spacing: -0.015em;
+/* Before / after */
+.compare-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+.compare-copy { order: 2; }
+.ba-fig { order: 1; }
+.ba {
+  --pos: calc(28px + 0.52128 * (100% - 56px)); /* value 52: see at() in the script */
+  position: relative; overflow: hidden; aspect-ratio: 5 / 4; background: #1b1a18;
+  touch-action: pan-y; user-select: none; -webkit-user-select: none;
 }
-.nope li:first-child { border-top: 1px solid var(--line-strong); }
-.note { margin-top: 24px; color: var(--muted); font-size: var(--fs-body); max-width: 46ch; }
+.ba-layer { position: absolute; inset: 0; }
+.ba-layer img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: var(--grade); }
+.ba-before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.ba-before img { filter: var(--grade) saturate(.8); } /* tones down the source's cyan cast */
+.ba-tag {
+  position: absolute; top: 16px; padding: 6px 12px; border-radius: 999px;
+  font: 500 13px/1.2 var(--sans); color: #f4f2ee; background: rgba(22, 21, 19, .62);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); pointer-events: none;
+  z-index: 1; /* pills sit over the divider line near the 3 and 97 ends */
+}
+.ba-tag.b { left: 16px; }
+.ba-tag.a { right: 16px; }
+.ba-handle { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: #f4f2ee; pointer-events: none; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
+.ba-knob {
+  /* --pos maps 3..97 to 28px..W-28px, so line, clip, knob and thumb centre always match and the knob fits. */
+  position: absolute; top: 50%; left: var(--pos); pointer-events: none; width: 48px; height: 48px; margin: -24px 0 0 -24px;
+  display: grid; place-items: center; border-radius: 999px; background: #f4f2ee; color: #1a1917;
+  box-shadow: 0 6px 24px rgba(20, 16, 10, .28);
+  transition: transform 160ms var(--ease-out);
+}
+.ba-knob svg { width: 28px; height: 16px; }
+.ba input {
+  position: absolute; top: 0; bottom: 0; left: 4px; width: calc(100% - 8px); height: 100%;
+  margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none; background: none;
+}
+.ba input::-webkit-slider-runnable-track { height: 100%; background: none; }
+.ba input::-webkit-slider-thumb { -webkit-appearance: none; width: 48px; height: 100vh; }
+.ba input::-moz-range-track { height: 100%; background: none; }
+.ba input::-moz-range-thumb { width: 48px; height: 100%; border: 0; border-radius: 0; }
+.ba:has(input:focus-visible) .ba-knob { outline: 2px solid var(--accent); outline-offset: 3px; }
+.ba:has(input:active) .ba-knob { transform: scale(.94); }
+.ba-fig { position: relative; }
+.ba-cap {
+  position: absolute; left: 16px; bottom: 16px; margin: 0; padding: 6px 12px; border-radius: 999px; pointer-events: none;
+  font: 500 13px/1.2 var(--sans); color: #f4f2ee; background: rgba(22, 21, 19, .62);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+
+/* Contact steps */
+.steps { margin-top: 24px; font-size: 16px; line-height: 1.5; max-width: 40ch; }
+.steps li { padding: 12px 0; border-top: 1px solid var(--line); }
+.steps li:last-child { border-bottom: 1px solid var(--line); }
 
 /* Area */
-.area { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; margin-top: 64px; }
-.area h3 { font: 500 var(--fs-ui)/1.4 var(--font); color: var(--muted); letter-spacing: 0; padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
-.area li { font-size: var(--fs-lead); line-height: 1.8; letter-spacing: -0.01em; }
-.area-note { margin-top: 48px; color: var(--muted); font-size: var(--fs-body); }
+.area { background: var(--bg-2); padding-block: clamp(56px, 7vw, 96px); }
+.area h2 { max-width: 30ch; font-size: clamp(28px, 3vw, 36px); }
+.towns { margin-top: 20px; font: 400 17px/1.6 var(--sans); color: var(--muted); max-width: 62ch; }
+.towns li { display: inline-block; }
+.towns li:not(:last-child)::after { content: ","; margin-right: .3em; }
 
 /* FAQ */
-.faq-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+.faq-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
 .faq-grid h2 { position: sticky; top: 112px; }
 .faq details { border-bottom: 1px solid var(--line); }
 .faq details:first-child { border-top: 1px solid var(--line); }
 .faq summary {
   display: flex; justify-content: space-between; align-items: center; gap: 24px;
-  min-height: 72px; padding-block: 24px; cursor: pointer; list-style: none;
-  font-size: var(--fs-lead); line-height: 1.4; font-weight: 500; letter-spacing: -0.01em;
+  min-height: 72px; padding-block: 20px; cursor: pointer; list-style: none;
+  font-size: 18px; line-height: 1.4; font-weight: 500; letter-spacing: -0.01em;
 }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
-  content: ""; flex: none; width: 12px; height: 12px;
-  background:
-    linear-gradient(currentColor, currentColor) center / 12px 1.5px no-repeat,
-    linear-gradient(currentColor, currentColor) center / 1.5px 12px no-repeat;
-  color: var(--muted);
-  transition: transform 260ms var(--spring);
+  content: ""; flex: none; width: 12px; height: 12px; color: var(--muted);
+  background: linear-gradient(currentColor, currentColor) center / 12px 1.5px no-repeat, linear-gradient(currentColor, currentColor) center / 1.5px 12px no-repeat;
+  transition: transform 220ms var(--ease-out);
 }
 .faq details[open] summary::after { transform: rotate(45deg); }
-.faq details p { padding-bottom: 24px; color: var(--muted); font-size: var(--fs-body); max-width: 58ch; }
+.faq details p { padding-bottom: 24px; color: var(--muted); font-size: 16px; max-width: 58ch; }
 @media (forced-colors: active) { .faq summary::after { forced-color-adjust: none; color: CanvasText; } }
 
-/* Final CTA */
-.cta { text-align: center; }
-.cta h2 { margin-inline: auto; font-size: clamp(40px, 6vw, 72px); max-width: 14ch; letter-spacing: -0.045em; line-height: 1; }
-.cta .sub { margin-inline: auto; }
-.cta .actions { justify-content: center; }
-.email-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 16px; margin-top: 24px; }
-.email-row a, .site-footer .wrap > a:not(.brand) { display: inline-flex; align-items: center; min-height: 44px; }
-.email-row a { font: 500 var(--fs-ui)/1.4 var(--mono); color: var(--ink); text-underline-offset: 4px; text-decoration-color: var(--line-strong); overflow-wrap: anywhere; }
-.copy {
-  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px;
-  border: 1px solid var(--line-strong); border-radius: var(--radius); background: transparent; color: var(--ink);
-  font: 500 var(--fs-ui)/1 var(--font); cursor: pointer;
-  transition: transform 220ms var(--spring), border-color 160ms ease;
+/* Contact */
+.contact { border-top: 1px solid var(--line); }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(48px, 7vw, 120px); align-items: start; }
+.contact-photo { aspect-ratio: 4 / 5; margin-top: 56px; max-width: 400px; }
+.contact-photo img { width: 122%; height: 122%; left: -11%; top: -22%; } /* x 9-91%, y 18-100%: barrel stamp (y 11-15%) stays out */
+.alt-email { margin-top: 32px; font-size: 16px; color: var(--muted); }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 8px; }
+.email-row a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); font-weight: 500; text-underline-offset: 4px; text-decoration-color: var(--line-strong); overflow-wrap: anywhere; }
+.chip {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
+  border: 1px solid var(--line-strong); border-radius: 999px; background: transparent; color: var(--ink);
+  font: 500 14px/1 var(--sans); cursor: pointer; text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms var(--ease-out);
 }
-.copy:hover { border-color: var(--ink); }
-.copy:active { transform: scale(.96); transition-duration: 90ms; }
-.copy.done { border-color: var(--accent); }
+.chip:hover { border-color: var(--ink); }
+.chip:active { transform: scale(.96); }
+.chip.done { border-color: var(--accent); }
+
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.form .full { grid-column: 1 / -1; }
+.req-note { grid-column: 1 / -1; font-size: 14px; color: var(--muted); }
+.field { display: grid; gap: 8px; align-content: start; }
+.field label { font: 500 15px/1.3 var(--sans); }
+.field label .req { color: var(--accent-hover); margin-left: 2px; }
+.field label .opt { color: var(--muted); font-weight: 400; }
+.input {
+  width: 100%; min-height: 52px; padding: 13px 16px;
+  font: 400 16px/1.4 var(--sans); color: var(--ink);
+  background: var(--field); border: 1px solid var(--field-line); border-radius: 10px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.input::placeholder { color: color-mix(in srgb, var(--muted) 85%, transparent); }
+.input:hover { border-color: var(--muted); }
+.input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.input[aria-invalid="true"] { border-color: var(--danger); }
+select.input {
+  -webkit-appearance: none; appearance: none; padding-right: 44px; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 22px) 50%, calc(100% - 17px) 50%;
+  background-size: 5px 5px, 5px 5px; background-repeat: no-repeat;
+}
+textarea.input { min-height: 136px; resize: vertical; }
+input[type="file"].input { padding: 10px 12px; cursor: pointer; }
+input[type="file"].input::file-selector-button {
+  margin-right: 14px; min-height: 32px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: 999px;
+  background: transparent; color: var(--ink); font: 500 14px/1 var(--sans); cursor: pointer;
+}
+.help { font-size: 14px; line-height: 1.5; color: var(--muted); }
+.err { font-size: 14px; line-height: 1.4; color: var(--danger); font-weight: 500; }
+.err:empty { display: none; }
+.form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+.form-foot .help { max-width: 34ch; }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.sent { padding: 40px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sent h3 { font: 400 clamp(28px, 3vw, 40px)/1.1 var(--serif); letter-spacing: -0.015em; }
+.sent p { margin-top: 12px; color: var(--muted); }
+.sent:focus, .msg-done:focus { outline: none; }
 
 /* Footer */
-.site-footer { border-top: 1px solid var(--line); padding-block: 48px 40px; font-size: var(--fs-ui); color: var(--muted); }
-.site-footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 24px 40px; align-items: center; }
+.site-footer { border-top: 1px solid var(--line); padding-block: 48px 40px; font-size: 15px; color: var(--muted); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; }
 .site-footer .brand { color: var(--ink); }
-.site-footer a:not(.brand) { text-underline-offset: 4px; }
-.foot-meta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-top: 24px; border-top: 1px solid var(--line); }
+.site-footer a:not(.brand) { display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 4px; }
 
-/* Motion: entrance only, once. The wheel rolls in; the caliper stays put. */
-@media (prefers-reduced-motion: no-preference) {
-  html { scroll-behavior: smooth; }
-  .rise { animation: rise 800ms var(--ease-out) both; animation-delay: calc(var(--i, 0) * 70ms + 80ms); }
-  .roll { animation: roll 1500ms var(--ease-out) 120ms both; }
-  .roll .spin { animation: spin 1500ms var(--ease-out) 120ms both; }
-  @keyframes rise { from { opacity: 0; transform: translateY(12px); } }
-  @keyframes roll { from { opacity: 0; transform: translateX(10%); } }
-  @keyframes spin { from { transform: rotate(12deg); } }
+/* Messenger */
+.msg-launch {
+  display: none; position: fixed; right: 24px; bottom: 24px; z-index: 40;
+  align-items: center; gap: 10px; min-height: 52px; padding: 0 22px 0 18px; border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  background: var(--ink); color: var(--bg); font: 500 15px/1 var(--sans); cursor: pointer;
+  box-shadow: 0 10px 30px rgba(26, 20, 12, .22);
+  transition: transform 200ms var(--ease-out), opacity 200ms ease, visibility 0s linear 0s;
 }
+.js .msg-launch { display: inline-flex; }
+.msg-launch svg { width: 22px; height: 22px; }
+.msg-launch:active { transform: scale(.96); }
+.msg-launch.away { opacity: 0; visibility: hidden; transform: translateY(12px); transition: transform 200ms var(--ease-out), opacity 200ms ease, visibility 0s linear 200ms; }
+.msg-panel {
+  position: fixed; right: 24px; bottom: 92px; z-index: 45; width: 380px; max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 120px); overflow-y: auto; overscroll-behavior: contain;
+  padding: 24px; border-radius: 16px; background: var(--bg); color: var(--ink);
+  border: 1px solid var(--line); box-shadow: 0 24px 64px rgba(26, 20, 12, .22), 0 2px 8px rgba(26, 20, 12, .08);
+  transform-origin: 100% 100%;
+  opacity: 0; visibility: hidden; transform: translateY(8px) scale(.98);
+  transition: opacity 180ms ease, transform 220ms var(--ease-out), visibility 0s linear 220ms;
+}
+.msg-panel.open { opacity: 1; visibility: visible; transform: none; transition: opacity 180ms ease, transform 260ms var(--ease-out), visibility 0s; }
+.msg-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.msg-head h2 { font: 500 18px/1.3 var(--sans); letter-spacing: -0.01em; max-width: none; }
+.msg-head p { margin-top: 4px; font-size: 15px; color: var(--muted); }
+.icon-btn { flex: none; display: grid; place-items: center; width: 44px; height: 44px; margin: -10px -10px 0 0; border: 0; border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; }
+.icon-btn:hover { background: var(--bg-2); }
+.icon-btn svg { width: 20px; height: 20px; }
+.msg-form { display: grid; gap: 16px; margin-top: 20px; }
+.msg-form .input { min-height: 48px; padding-block: 11px; }
+.msg-form textarea.input { min-height: 112px; }
+.msg-form .btn { width: 100%; }
+.msg-status { font-size: 15px; line-height: 1.5; }
+.msg-status:empty { display: none; }
+.msg-status.bad { color: var(--danger); }
+.msg-done h3 { font: 400 24px/1.2 var(--serif); margin-top: 20px; }
+.msg-done p { margin-top: 8px; color: var(--muted); font-size: 15px; }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .br-lg { display: none; }
+@media (max-width: 1080px) {
   .nav, .site-header .btn-desktop { display: none; }
   .menu { display: block; margin-left: auto; }
   .menu summary {
-    display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
-    border: 1px solid var(--line-strong); border-radius: var(--radius);
-    list-style: none; cursor: pointer; font-size: var(--fs-ui); font-weight: 500;
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px;
+    border: 1px solid var(--line-strong); border-radius: 999px;
+    list-style: none; cursor: pointer; font-size: 15px; font-weight: 500;
   }
   .menu summary::-webkit-details-marker { display: none; }
   .menu[open] summary { border-color: var(--ink); }
+  .menu[open] .menu-panel { box-shadow: 0 0 0 100vmax rgb(0 0 0 / .32); clip-path: inset(0 -100vmax -100vmax); }
+  body:has(.menu[open]) :is(.hero .actions, .msg-launch) { visibility: hidden; }
   .menu-panel {
     position: absolute; left: 0; right: 0; top: 100%;
-    max-height: calc(100vh - 64px); max-height: calc(100dvh - 64px);
-    overflow-y: auto; overscroll-behavior: contain;
+    max-height: calc(100dvh - 68px); overflow-y: auto; overscroll-behavior: contain;
     background: var(--bg); border-bottom: 1px solid var(--line);
-    padding: 8px clamp(24px, 4vw, 40px) 24px;
+    padding: 8px var(--gutter) 24px;
   }
-  .menu-panel a:not(.btn) {
-    display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid var(--line);
-    text-decoration: none; font-size: var(--fs-lead); font-weight: 500;
-  }
+  .menu-panel a:not(.btn) { display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid var(--line); text-decoration: none; font-size: 18px; font-weight: 500; }
   .menu-panel .btn { width: 100%; margin-top: 24px; }
-  .hero .wrap { grid-template-columns: 1fr; }
-  .hero-wheel { justify-self: start; max-width: 320px; margin-top: 16px; }
-  .services { grid-template-columns: 1fr 1fr; }
-  .services li:nth-child(n) { padding: 32px 24px 32px 0; border-left: 0; }
-  .services li:nth-child(2n) { padding-left: 24px; border-left: 1px solid var(--line); }
-  .steps { grid-template-columns: 1fr; gap: 48px; }
-  .split, .faq-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .services-grid, .compare-grid, .faq-grid, .contact-grid { grid-template-columns: 1fr; }
+  .svc-photo { position: relative; top: auto; aspect-ratio: 4 / 3; order: -1; }
+  .svc-photo img { width: 158.7%; height: 141%; left: -7.9%; top: -40.9%; } /* x 5-68%, y 29-100% */
+  .compare-copy { order: 1; }
+  .ba-fig { order: 2; }
   .faq-grid h2 { position: static; }
-  .area { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+  .gal .g1 { grid-column: 1 / span 5; margin-top: 0; }
+  .gal .g2 { grid-column: 6 / span 7; aspect-ratio: 5 / 6; }
+  .gal .g2 img { width: 213.3%; height: 100%; left: -68%; top: 0; } /* x 32-79% */
+  .gal .g3 { display: none; }
+  .contact-photo { aspect-ratio: 3 / 2; max-width: none; margin-top: 40px; }
+  .contact-photo img { width: 100%; height: 187.5%; left: 0; top: -56.3%; } /* y 30-83% */
+  .hero-media { aspect-ratio: 4 / 3; }
+  .hero-media img { width: 181.5%; height: 161.3%; left: -62.6%; top: -22.6%; } /* x 34-90%, y 14-76% */
 }
 @media (max-width: 600px) {
-  .hero-wheel { max-width: 288px; }
-  .site-header .wrap { gap: 16px; }
-  .eyebrow span { display: block; }
-  .eyebrow span:first-child::after { content: none; }
+  h1 { font-size: clamp(40px, 11vw, 56px); }
+  .lead { font-size: 17px; }
+  .actions .btn-line { display: none; }
+  .actions { width: 100%; }
   .actions .btn { flex: 1 1 100%; }
-  .services { grid-template-columns: 1fr; }
-  .services li:nth-child(n) { padding: 24px 0 32px; border-left: 0; }
-  .site-footer .wrap { grid-template-columns: 1fr; }
+  .hero-media { aspect-ratio: 4 / 5; max-height: none; margin-top: 32px; }
+  .hero-media img { width: 302.1%; height: 161.3%; left: -128.4%; top: -22.6%; } /* x 42-76%, y 14-76% */
+  .svc { grid-template-columns: 1fr; margin-top: 40px; }
+  .form { grid-template-columns: 1fr; gap: 20px; }
+  .ba-knob { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+  .msg-launch { right: 16px; bottom: 16px; }
+  .msg-panel {
+    left: 0; right: 0; bottom: 0; width: auto; max-width: none; max-height: 88dvh;
+    border-radius: 16px 16px 0 0; border-bottom: 0; padding: 24px 20px calc(20px + env(safe-area-inset-bottom));
+    transform-origin: 50% 100%; transform: translateY(24px);
+    box-shadow: 0 0 0 100vmax rgba(18, 14, 8, 0);
+    transition: opacity 180ms ease, transform 220ms var(--ease-out), box-shadow 200ms ease, visibility 0s linear 220ms;
+  }
+  .site-footer .wrap { flex-direction: column; align-items: flex-start; }
+  .form-foot .btn { width: 100%; }
+  .msg-panel.open { box-shadow: 0 0 0 100vmax rgba(18, 14, 8, .32); transition: opacity 180ms ease, transform 260ms var(--ease-out), box-shadow 200ms ease, visibility 0s; }
 }
 @media (max-width: 360px) {
-  .brand { font-size: var(--fs-ui); }
-  .area { grid-template-columns: 1fr; }
+  .brand { font-size: 15px; gap: 8px; }
+  .site-header .wrap { gap: 12px; }
 }
-
-/* Reduced motion: no transitions, no transforms, no smooth scroll */
+@media print {
+  [data-reveal], [data-photo], .hero-media img { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+  .msg-launch, .msg-panel { display: none !important; }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
-  .btn:hover, .btn:active, .copy:active { transform: none; }
+  .btn:active, .chip:active, .msg-launch:active { transform: none; }
+  .msg-panel, .msg-panel.open, .msg-launch.away { transform: none; }
 }
 </style>
 </head>
@@ -338,19 +485,19 @@ h3 { font-size: var(--fs-lead); line-height: 1.3; font-weight: 600; letter-spaci
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="#services">Services</a>
-      <a href="#how">How it works</a>
-      <a href="#area">Service area</a>
+      <a href="#compare">Before and after</a>
+      <a href="#area">Area</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary btn-sm btn-desktop" href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20quote&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%20%28year/make/model%29%3A%0D%0AWheel%20size%20and%20finish%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0APlease%20attach%202-3%20photos%20of%20each%20damaged%20wheel.%0D%0A">Get a quote</a>
+    <a class="btn btn-primary btn-sm btn-desktop" href="#contact">Get a quote</a>
     <details class="menu">
       <summary>Menu</summary>
       <nav class="menu-panel" aria-label="Mobile">
         <a href="#services">Services</a>
-        <a href="#how">How it works</a>
-        <a href="#area">Service area</a>
+        <a href="#compare">Before and after</a>
+        <a href="#area">Area</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn-primary" href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20quote&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%20%28year/make/model%29%3A%0D%0AWheel%20size%20and%20finish%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0APlease%20attach%202-3%20photos%20of%20each%20damaged%20wheel.%0D%0A">Get a quote</a>
+        <a class="btn btn-primary" href="#contact">Get a quote</a>
       </nav>
     </details>
   </div>
@@ -359,165 +506,213 @@ h3 { font-size: var(--fs-lead); line-height: 1.3; font-weight: 600; letter-spaci
 <main id="main" tabindex="-1">
   <div class="hero" id="top">
     <div class="wrap">
-      <div>
-        <p class="eyebrow rise" style="--i:0"><span>Mobile wheel repair</span> <span>San Luis Obispo County</span></p>
-        <h1 class="rise" style="--i:1">Wheel repair <br class="br-lg">that comes to you.</h1>
-        <p class="lead rise" style="--i:2">Curb rash, scratches and refinishing, done at your home or workplace anywhere in San&nbsp;Luis&nbsp;Obispo County.</p>
-        <div class="actions rise" style="--i:3">
-          <a class="btn btn-primary" href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20quote&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%20%28year/make/model%29%3A%0D%0AWheel%20size%20and%20finish%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0APlease%20attach%202-3%20photos%20of%20each%20damaged%20wheel.%0D%0A">Email photos for a quote</a>
-          <a class="btn btn-ghost" href="#how">How it works</a>
+      <p class="eyebrow">Mobile wheel repair in San&nbsp;Luis&nbsp;Obispo County</p>
+      <h1>Wheel repair that <em>comes to&nbsp;you.</em></h1>
+      <div class="hero-row">
+        <p class="lead">Curb rash, scratches and refinishing, done at your home or workplace. Free quotes from photos.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Get a quote</a>
+          <a class="btn btn-line" href="#compare">See before and after</a>
         </div>
-        <div class="email-row">
-          <a href="mailto:support@slocountywheels.com">support@slocountywheels.com</a>
-          <button class="copy" type="button" data-copy="support@slocountywheels.com"><span aria-live="polite">Copy email</span></button>
-        </div>
-      </div>
-      <div class="hero-wheel">
-        <svg class="roll" viewBox="-200 -200 400 400" role="img" aria-label="Line drawing of a five double-spoke alloy wheel">
-          <defs>
-            <path id="win" d="M35.9 -141.5A146 146 0 0 1 123.5 -77.9Q127.1 -71.9 120.9 -68.7L63.9 -39.2Q57.7 -36.0 53.7 -41.8A68 68 0 0 0 23.1 -63.9Q16.5 -66.0 17.6 -72.9L28.0 -136.2Q29.1 -143.1 35.9 -141.5ZM-5.7 -145.9A146 146 0 0 1 5.7 -145.9Q10.7 -145.6 9.6 -140.7L1.1 -100.9Q0.0 -96.0 -1.1 -100.9L-9.6 -140.7Q-10.7 -145.6 -5.7 -145.9ZM145.7 -9.6A146 146 0 0 1 112.2 93.4Q107.6 98.6 102.7 93.7L57.1 48.6Q52.1 43.7 56.3 38.1A68 68 0 0 0 68.0 2.3Q67.8 -4.7 74.8 -5.8L138.1 -15.5Q145.1 -16.5 145.7 -9.6ZM137.0 -50.5A146 146 0 0 1 140.5 -39.7Q141.8 -34.8 136.8 -34.3L96.3 -30.2Q91.3 -29.7 95.6 -32.2L130.9 -52.7Q135.2 -55.2 137.0 -50.5ZM54.1 135.6A146 146 0 0 1 -54.1 135.6Q-60.5 132.9 -57.4 126.6L-28.6 69.3Q-25.5 63.0 -18.9 65.3A68 68 0 0 0 18.9 65.3Q25.5 63.0 28.6 69.3L57.4 126.6Q60.5 132.9 54.1 135.6ZM90.4 114.7A146 146 0 0 1 81.1 121.4Q76.9 124.1 74.9 119.5L58.4 82.2Q56.4 77.7 60.2 81.0L90.5 108.2Q94.2 111.5 90.4 114.7ZM-112.2 93.4A146 146 0 0 1 -145.7 -9.6Q-145.1 -16.5 -138.1 -15.5L-74.8 -5.8Q-67.8 -4.7 -68.0 2.3A68 68 0 0 0 -56.3 38.1Q-52.1 43.7 -57.1 48.6L-102.7 93.7Q-107.6 98.6 -112.2 93.4ZM-81.1 121.4A146 146 0 0 1 -90.4 114.7Q-94.2 111.5 -90.5 108.2L-60.2 81.0Q-56.4 77.7 -58.4 82.2L-74.9 119.5Q-76.9 124.1 -81.1 121.4ZM-123.5 -77.9A146 146 0 0 1 -35.9 -141.5Q-29.1 -143.1 -28.0 -136.2L-17.6 -72.9Q-16.5 -66.0 -23.1 -63.9A68 68 0 0 0 -53.7 -41.8Q-57.7 -36.0 -63.9 -39.2L-120.9 -68.7Q-127.1 -71.9 -123.5 -77.9ZM-140.5 -39.7A146 146 0 0 1 -137.0 -50.5Q-135.2 -55.2 -130.9 -52.7L-95.6 -32.2Q-91.3 -29.7 -96.3 -30.2L-136.8 -34.3Q-141.8 -34.8 -140.5 -39.7Z"/>
-            <mask id="face"><circle r="152" fill="#fff"/><use href="#win" fill="#000"/></mask>
-          </defs>
-          <!-- tire -->
-          <circle r="196" fill="var(--tire)"/>
-          <circle r="172" fill="var(--bg)"/>
-          <!-- brake rotor and caliper: fixed to the car, seen through the spokes -->
-          <g fill="none" stroke="var(--wheel-soft)" stroke-width="1">
-            <circle r="130"/>
-            <circle r="92"/>
-          </g>
-          <g fill="var(--wheel-soft)">
-            <circle cx="12.3" cy="-117.4" r="2.6"/><circle cx="32.1" cy="-98.9" r="2.6"/><circle cx="59.0" cy="-102.2" r="2.6"/><circle cx="69.6" cy="-77.3" r="2.6"/><circle cx="95.5" cy="-69.4" r="2.6"/><circle cx="95.0" cy="-42.3" r="2.6"/><circle cx="115.4" cy="-24.5" r="2.6"/><circle cx="104.0" cy="0.0" r="2.6"/><circle cx="115.4" cy="24.5" r="2.6"/><circle cx="95.0" cy="42.3" r="2.6"/><circle cx="95.5" cy="69.4" r="2.6"/><circle cx="69.6" cy="77.3" r="2.6"/><circle cx="59.0" cy="102.2" r="2.6"/><circle cx="32.1" cy="98.9" r="2.6"/><circle cx="12.3" cy="117.4" r="2.6"/><circle cx="-10.9" cy="103.4" r="2.6"/><circle cx="-36.5" cy="112.2" r="2.6"/><circle cx="-52.0" cy="90.1" r="2.6"/><circle cx="-79.0" cy="87.7" r="2.6"/><circle cx="-84.1" cy="61.1" r="2.6"/><circle cx="-107.8" cy="48.0" r="2.6"/><circle cx="-101.7" cy="21.6" r="2.6"/><circle cx="-118.0" cy="0.0" r="2.6"/><circle cx="-101.7" cy="-21.6" r="2.6"/><circle cx="-107.8" cy="-48.0" r="2.6"/><circle cx="-84.1" cy="-61.1" r="2.6"/><circle cx="-79.0" cy="-87.7" r="2.6"/><circle cx="-52.0" cy="-90.1" r="2.6"/><circle cx="-36.5" cy="-112.2" r="2.6"/><circle cx="-10.9" cy="-103.4" r="2.6"/>
-          </g>
-          <path d="M51.7 -128.0A138 138 0 0 1 121.8 -64.8A17 17 0 0 1 91.8 -48.8A104 104 0 0 0 39.0 -96.4A17 17 0 0 1 51.7 -128.0Z" fill="var(--accent)" stroke="var(--accent)" stroke-width="1.4" stroke-linejoin="round"/><path d="M56.8 -106.8A121 121 0 0 1 100.3 -67.7" fill="none" stroke="var(--bg)" stroke-width="1.2" stroke-linecap="round" opacity=".7"/>
-          <g class="spin">
-            <!-- wheel face, cut away at the spoke windows -->
-            <circle r="152" fill="var(--bg)" mask="url(#face)"/>
-            <!-- silhouette: tire and rim lip -->
-            <g fill="none" stroke="var(--wheel)" stroke-width="2">
-              <circle r="196"/>
-              <circle r="163"/>
-            </g>
-            <circle r="172" fill="none" stroke="var(--wheel)" stroke-width="1.4"/>
-            <circle r="186" fill="none" stroke="var(--wheel-soft)" stroke-width=".8"/>
-            <circle r="157.5" fill="none" stroke="var(--wheel-soft)" stroke-width=".8"/>
-            <!-- spokes and hub -->
-            <g fill="none" stroke="var(--wheel)" stroke-width="1.4" stroke-linejoin="round">
-              <use href="#win"/>
-              <circle r="58"/>
-            </g>
-            <!-- barrel edge, center cap, lug nuts -->
-            <g fill="none" stroke="var(--wheel)" stroke-width="1.1" stroke-linejoin="round">
-              <circle r="152"/>
-              <circle r="22"/>
-              <polygon points="31.5 -32.4 27.5 -25.4 19.5 -25.4 15.5 -32.4 19.5 -39.3 27.5 -39.3"/><circle cx="23.5" cy="-32.4" r="3.2"/>
-            <polygon points="46.0 12.4 42.0 19.3 34.0 19.3 30.0 12.4 34.0 5.4 42.0 5.4"/><circle cx="38.0" cy="12.4" r="3.2"/>
-            <polygon points="8.0 40.0 4.0 46.9 -4.0 46.9 -8.0 40.0 -4.0 33.1 4.0 33.1"/><circle cx="0.0" cy="40.0" r="3.2"/>
-            <polygon points="-30.0 12.4 -34.0 19.3 -42.0 19.3 -46.0 12.4 -42.0 5.4 -34.0 5.4"/><circle cx="-38.0" cy="12.4" r="3.2"/>
-            <polygon points="-15.5 -32.4 -19.5 -25.4 -27.5 -25.4 -31.5 -32.4 -27.5 -39.3 -19.5 -39.3"/><circle cx="-23.5" cy="-32.4" r="3.2"/>
-            </g>
-            <circle r="16" fill="none" stroke="var(--wheel-soft)" stroke-width="1"/>
-            <!-- valve stem -->
-            <rect x="-3" y="-171" width="6" height="12" rx="2" transform="rotate(216)" fill="var(--bg)" stroke="var(--wheel)" stroke-width="1.1"/>
-          </g>
-        </svg>
       </div>
     </div>
+    <figure class="hero-media ph crop">
+      <div class="hero-zoom"><img src="https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000"
+        srcset="https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400 1400w, https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000 2000w, https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2800 2800w, https://images.pexels.com/photos/3806249/pexels-photo-3806249.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=3600 3600w"
+        sizes="(max-width: 600px) 900px, (max-width: 900px) 180vw, 127vw" width="2400" height="1600" fetchpriority="high" decoding="async"
+        alt="Gloved hands seating a multi-spoke alloy wheel onto a car's hub."></div>
+    </figure>
   </div>
 
-  <section id="services" class="rule" aria-labelledby="services-title">
-    <div class="wrap">
-      <h2 id="services-title">What we fix at your place.</h2>
-      <p class="sub">Cosmetic wheel damage and refinishing, done on-site so your car never leaves your driveway or parking spot.</p>
-      <ul class="services" role="list">
-        <li><h3>Curb rash and scrapes</h3><p>Rim edges chewed up by curbs, repaired and refinished to blend with the rest of the wheel.</p></li>
-        <li><h3>Scratches and gouges</h3><p>Deeper marks on the face or spokes, filled and brought back to a clean finish.</p></li>
-        <li><h3>Factory color refinishing</h3><p>Painted wheels refinished with a color match to the original factory finish.</p></li>
-        <li><h3>Color changes and custom finishes</h3><p>Gloss black, satin, gunmetal, or the finish you have in mind.</p></li>
-        <li><h3>Lease-return repair</h3><p>Fix wheel damage before you turn the lease in.</p></li>
-        <li><h3>Brake caliper painting</h3><p>Calipers painted in the color you choose.</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="how" class="rule" aria-labelledby="how-title">
-    <div class="wrap">
-      <h2 id="how-title">How it works</h2>
-      <p class="sub">No shop visit, no drop-off. It starts with a few photos.</p>
-      <ol class="steps" role="list">
-        <li><h3>Send photos</h3><p>Email 2-3 photos of each damaged wheel with your vehicle year, make and model, wheel size and city.</p><p class="tpl">Name:<br>City:<br>Vehicle (year/make/model):<br>Wheel size and finish:<br>What happened:</p></li>
-        <li><h3>Get a quote</h3><p>We look at the photos and reply with a quote. Quotes are free.</p></li>
-        <li><h3>We come to you</h3><p>The repair happens at your home or workplace, anywhere in San&nbsp;Luis&nbsp;Obispo County.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="band" aria-labelledby="nope-title">
-    <div class="wrap split">
+  <section id="services" aria-labelledby="services-title">
+    <div class="wrap services-grid">
       <div>
-        <h2 id="nope-title">What we don’t do on-site.</h2>
-        <p class="note">Some repairs need a machine shop. Send photos and we’ll tell you straight whether your wheel can be fixed on-site or needs one.</p>
+        <h2 id="services-title" data-reveal>Done where you&nbsp;park.</h2>
+        <p class="sub">Cosmetic wheel repair and refinishing at your home or workplace.</p>
+        <ul class="svc" role="list" data-reveal>
+          <li><h3>Curb rash and scrapes</h3><p>Rim edges repaired and refinished to blend in.</p></li>
+          <li><h3>Scratches and gouges</h3><p>Deeper marks on the face or spokes, filled and refinished.</p></li>
+          <li><h3>Factory color refinishing</h3><p>Painted wheels matched to the original factory color.</p></li>
+          <li><h3>Color changes and custom finishes</h3><p>Gloss black, satin, gunmetal, or the finish you have in mind.</p></li>
+          <li><h3>Lease-return repair</h3><p>Wheel damage fixed before you turn the car in.</p></li>
+          <li><h3>Brake caliper painting</h3><p>Calipers painted in the color you choose.</p></li>
+        </ul>
       </div>
-      <ul class="nope" role="list">
-        <li>Bent-wheel straightening</li>
-        <li>Crack welding</li>
-        <li>Diamond-cut and CNC-machined faces</li>
+      <figure class="svc-photo ph crop" data-photo>
+        <img src="https://images.pexels.com/photos/14615263/pexels-photo-14615263.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000"
+          srcset="https://images.pexels.com/photos/14615263/pexels-photo-14615263.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700 700w, https://images.pexels.com/photos/14615263/pexels-photo-14615263.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000 1000w, https://images.pexels.com/photos/14615263/pexels-photo-14615263.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500 1500w, https://images.pexels.com/photos/14615263/pexels-photo-14615263.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2100 2100w"
+          sizes="(max-width: 900px) 160vw, 90vw" width="1500" height="1000" loading="lazy" decoding="async"
+          alt="A spray gun held over freshly painted gloss-black parts in a bright paint booth.">
+      </figure>
+    </div>
+  </section>
+
+  <section class="gallery" aria-label="Photos of wheel work">
+    <div class="wrap gal">
+      <figure class="g1 ph" data-photo>
+        <img src="https://images.unsplash.com/photo-1708805282683-50a060eba80f?auto=format&amp;fit=crop&amp;w=700&amp;q=75"
+          srcset="https://images.unsplash.com/photo-1708805282683-50a060eba80f?auto=format&amp;fit=crop&amp;w=500&amp;q=75 500w, https://images.unsplash.com/photo-1708805282683-50a060eba80f?auto=format&amp;fit=crop&amp;w=800&amp;q=75 800w, https://images.unsplash.com/photo-1708805282683-50a060eba80f?auto=format&amp;fit=crop&amp;w=1200&amp;q=75 1200w"
+          sizes="(max-width: 900px) 42vw, 25vw" width="1200" height="1600" loading="lazy" decoding="async"
+          alt="A black-gloved hand works a soft detailing brush along the tire and rim edge of a gloss-black wheel.">
+      </figure>
+      <figure class="g2 ph crop" data-photo>
+        <img src="https://images.pexels.com/photos/8985666/pexels-photo-8985666.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+          srcset="https://images.pexels.com/photos/8985666/pexels-photo-8985666.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700 700w, https://images.pexels.com/photos/8985666/pexels-photo-8985666.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200 1200w, https://images.pexels.com/photos/8985666/pexels-photo-8985666.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800 1800w"
+          sizes="(max-width: 900px) 125vw, 69vw" width="1800" height="1012" loading="lazy" decoding="async"
+          alt="A backlit workshop: a person in coveralls rolls a wheel toward a car raised on a lift, with tool chests along the wall.">
+      </figure>
+      <figure class="g3 ph" data-photo>
+        <img src="https://images.unsplash.com/photo-1594500067378-24336f95870f?rect=1786,0,2560,3840&amp;auto=format&amp;fit=crop&amp;q=75&amp;w=700"
+          srcset="https://images.unsplash.com/photo-1594500067378-24336f95870f?rect=1786,0,2560,3840&amp;auto=format&amp;fit=crop&amp;q=75&amp;w=500 500w, https://images.unsplash.com/photo-1594500067378-24336f95870f?rect=1786,0,2560,3840&amp;auto=format&amp;fit=crop&amp;q=75&amp;w=800 800w, https://images.unsplash.com/photo-1594500067378-24336f95870f?rect=1786,0,2560,3840&amp;auto=format&amp;fit=crop&amp;q=75&amp;w=1200 1200w"
+          sizes="25vw" width="1200" height="1800" loading="lazy" decoding="async"
+          alt="A gold mesh-style wheel face with a polished outer lip, lit against a black background.">
+      </figure>
+    </div>
+  </section>
+
+  <section id="compare" aria-labelledby="compare-title">
+    <div class="wrap compare-grid">
+      <div class="compare-copy">
+        <h2 id="compare-title" data-reveal>Before and after.</h2>
+        <p class="sub">Before: a silver alloy wheel with brake-dust staining, corrosion and a bare caliper. After: a clean silver finish with a red painted caliper.<span class="js-hint"> Drag the handle to compare.</span></p>
+      </div>
+      <figure class="ba-fig">
+        <div class="ba">
+          <div class="ba-layer ba-after">
+            <img src="https://images.pexels.com/photos/833320/pexels-photo-833320.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1100&amp;h=880"
+              srcset="https://images.pexels.com/photos/833320/pexels-photo-833320.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=700&amp;h=560 700w, https://images.pexels.com/photos/833320/pexels-photo-833320.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1100&amp;h=880 1100w, https://images.pexels.com/photos/833320/pexels-photo-833320.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;w=1600&amp;h=1280 1600w"
+              sizes="(max-width: 900px) 100vw, 50vw" width="1250" height="1000" loading="lazy" decoding="async"
+              alt="After, example photo: close-up of a clean silver alloy wheel spoke, with a red brake caliper behind it.">
+          </div>
+          <div class="ba-layer ba-before">
+            <img src="https://images.unsplash.com/photo-1763569037536-024451e31264?rect=0,1800,2300,1840&amp;auto=format&amp;fit=crop&amp;q=75&amp;w=1100"
+              srcset="https://images.unsplash.com/photo-1763569037536-024451e31264?rect=0,1800,2300,1840&amp;auto=format&amp;fit=crop&amp;q=75&amp;w=700 700w, https://images.unsplash.com/photo-1763569037536-024451e31264?rect=0,1800,2300,1840&amp;auto=format&amp;fit=crop&amp;q=75&amp;w=1100 1100w, https://images.unsplash.com/photo-1763569037536-024451e31264?rect=0,1800,2300,1840&amp;auto=format&amp;fit=crop&amp;q=75&amp;w=1600 1600w"
+              sizes="(max-width: 900px) 100vw, 50vw" width="1250" height="1000" loading="lazy" decoding="async"
+              alt="Before, example photo: close-up of a silver alloy wheel spoke with brake-dust staining and spots of corrosion, a bare brake caliper behind it.">
+          </div>
+          <span class="ba-tag b" aria-hidden="true">Before</span>
+          <span class="ba-tag a" aria-hidden="true">After</span>
+          <div class="ba-handle" aria-hidden="true"></div><span class="ba-knob" aria-hidden="true"><svg viewBox="0 0 56 32" fill="currentColor"><path d="M21.1 26.6a1.9 1.9 0 0 1-2.7 2.7L6.5 17.4a1.9 1.9 0 0 1 0-2.7L18.4 2.7a1.9 1.9 0 0 1 2.7 2.7L10.5 16Z"/><path d="M49.5 17.4 37.6 29.3a1.9 1.9 0 0 1-2.7-2.7L45.5 16 34.9 5.4a1.9 1.9 0 0 1 2.7-2.7l11.9 11.9a1.9 1.9 0 0 1 0 2.8Z"/></svg></span>
+          <input type="range" min="3" max="97" value="52" step="1" aria-label="Before and after comparison. Higher values show more of the before photo." aria-valuetext="Half before, half after">
+        </div>
+        <figcaption class="ba-cap">Example photos. Not a customer job.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="area" class="area" aria-labelledby="area-title">
+    <div class="wrap">
+      <h2 id="area-title" data-reveal>Anywhere in San&nbsp;Luis&nbsp;Obispo County.</h2>
+      <ul class="towns" role="list">
+        <li>Paso Robles</li><li>Templeton</li><li>Atascadero</li><li>Santa Margarita</li><li>Cambria</li><li>Cayucos</li><li>Morro Bay</li><li>Los Osos</li><li>San&nbsp;Luis&nbsp;Obispo</li><li>Avila Beach</li><li>Pismo Beach</li><li>Grover Beach</li><li>Arroyo Grande</li><li>Oceano</li><li>Nipomo</li>
       </ul>
     </div>
   </section>
 
-  <section id="area" aria-labelledby="area-title">
-    <div class="wrap">
-      <h2 id="area-title">Anywhere in San&nbsp;Luis&nbsp;Obispo County.</h2>
-      <p class="sub">From Paso Robles to Nipomo, on the coast and inland.</p>
-      <div class="area">
-        <div><h3>North County</h3><ul role="list"><li>Paso Robles</li><li>Templeton</li><li>Atascadero</li><li>Santa Margarita</li></ul></div>
-        <div><h3>Coast</h3><ul role="list"><li>Cambria</li><li>Cayucos</li><li>Morro Bay</li><li>Los Osos</li></ul></div>
-        <div><h3>Central</h3><ul role="list"><li>San&nbsp;Luis&nbsp;Obispo</li><li>Avila Beach</li></ul></div>
-        <div><h3>South County</h3><ul role="list"><li>Pismo Beach</li><li>Grover Beach</li><li>Arroyo Grande</li><li>Oceano</li><li>Nipomo</li></ul></div>
-      </div>
-      <p class="area-note">Somewhere else in the county? Tell us your city when you email.</p>
-    </div>
-  </section>
-
-  <section id="faq" class="rule" aria-labelledby="faq-title">
+  <section id="faq" aria-labelledby="faq-title">
     <div class="wrap faq-grid">
-      <h2 id="faq-title">Common questions</h2>
+      <h2 id="faq-title" data-reveal>Questions</h2>
       <div class="faq">
-        <details>
-          <summary>Is the repair really done at my place?</summary>
-          <p>Yes. Every service listed under Services is done at your home or workplace, anywhere in San&nbsp;Luis&nbsp;Obispo County.</p>
-        </details>
         <details>
           <summary>How much does it cost?</summary>
           <p>It depends on the wheel and the damage, so we quote each job from your photos. Quotes are free.</p>
         </details>
         <details>
           <summary>What should I send for a quote?</summary>
-          <p>2-3 photos of each damaged wheel, plus your vehicle year, make and model, the wheel size, and your city. Email it all to support@slocountywheels.com.</p>
+          <p>A clear photo of each damaged wheel, plus your vehicle year, make and model, the wheel size, and your city. Attach a photo in the form below, or email several to support@slocountywheels.com.</p>
         </details>
         <details>
-          <summary>Can you fix a bent or cracked wheel?</summary>
-          <p>Not on-site. Straightening, crack welding and diamond-cut faces need a machine shop. Send photos and we’ll tell you straight whether yours can be fixed on-site or needs a machine shop.</p>
-        </details>
-        <details>
-          <summary>Can you fix my wheels before a lease return?</summary>
-          <p>Yes. Send photos of the damage and we’ll quote the repair so the wheels are sorted before you turn the car in.</p>
+          <summary><span>Can you fix bent, cracked or <span class="nw">diamond-cut</span> wheels?</span></summary>
+          <p>Not on-site. Bent-wheel straightening, crack welding and diamond-cut or CNC-machined faces need a machine shop. Send photos and we’ll tell you honestly if yours needs one.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <section class="cta rule" aria-labelledby="cta-title">
-    <div class="wrap">
-      <h2 id="cta-title">Send photos. Get a quote.</h2>
-      <p class="sub">Email 2-3 photos of each damaged wheel. We’ll reply with a free quote.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20quote&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%20%28year/make/model%29%3A%0D%0AWheel%20size%20and%20finish%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0APlease%20attach%202-3%20photos%20of%20each%20damaged%20wheel.%0D%0A">Email photos for a quote</a>
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contact-title" data-reveal>Get a free quote.</h2>
+        <ol class="steps" role="list" data-reveal>
+          <li>Send photos of the damage.</li>
+          <li>Get a free quote by email.</li>
+          <li>We come to your home or workplace.</li>
+        </ol>
+        <div class="alt-email">
+          <p>Prefer email? Send photos to</p>
+          <div class="email-row">
+            <a href="mailto:support@slocountywheels.com?subject=Wheel%20repair%20quote&amp;body=Name%3A%0D%0ACity%3A%0D%0AVehicle%20%28year/make/model%29%3A%0D%0AWheel%20size%20and%20finish%3A%0D%0AWhat%20happened%3A%0D%0A%0D%0APlease%20attach%202-3%20photos%20of%20each%20damaged%20wheel.%0D%0A">support@slocountywheels.com</a>
+            <button class="chip" type="button" data-copy="support@slocountywheels.com"><span aria-live="polite">Copy email</span></button>
+          </div>
+        </div>
+        <figure class="contact-photo ph crop" data-photo>
+          <img src="https://images.unsplash.com/photo-1755448159051-82a3cb06dcb3?auto=format&amp;fit=crop&amp;w=800&amp;q=75"
+            srcset="https://images.unsplash.com/photo-1755448159051-82a3cb06dcb3?auto=format&amp;fit=crop&amp;w=600&amp;q=75 600w, https://images.unsplash.com/photo-1755448159051-82a3cb06dcb3?auto=format&amp;fit=crop&amp;w=900&amp;q=75 900w, https://images.unsplash.com/photo-1755448159051-82a3cb06dcb3?auto=format&amp;fit=crop&amp;w=1300&amp;q=75 1300w"
+            sizes="(max-width: 900px) 100vw, 490px" width="2400" height="3000" loading="lazy" decoding="async"
+            alt="Close-up of a silver alloy wheel spoke and lug nut, with the brake rotor behind it.">
+        </figure>
       </div>
-      <div class="email-row">
-        <a href="mailto:support@slocountywheels.com">support@slocountywheels.com</a>
-        <button class="copy" type="button" data-copy="support@slocountywheels.com"><span aria-live="polite">Copy email</span></button>
+
+      <div>
+        <div class="sent" id="sent" role="status" tabindex="-1" hidden>
+          <h3>Thanks. Your request is in.</h3>
+          <p>We’ll reply by email to the address you gave us.</p>
+        </div>
+        <form class="form" id="quote-form" action="https://formsubmit.co/support@slocountywheels.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="New quote request | slocountywheels.com">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://slocountywheels.com/?sent=1#contact">
+          <div class="hp" aria-hidden="true"><label for="q-honey">Leave this empty</label><input type="text" id="q-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
+
+          <p class="req-note">Fields marked <span aria-hidden="true">*</span><span class="sr">with an asterisk</span> are required.</p>
+          <div class="field">
+            <label for="q-name">Name<span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="q-name" name="name" type="text" autocomplete="name" required aria-describedby="q-name-err">
+            <p class="err" id="q-name-err"></p>
+          </div>
+          <div class="field">
+            <label for="q-email">Email<span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="q-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required aria-describedby="q-email-err">
+            <p class="err" id="q-email-err"></p>
+          </div>
+          <div class="field">
+            <label for="q-phone">Phone</label>
+            <input class="input" id="q-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+          </div>
+          <div class="field">
+            <label for="q-city">City</label>
+            <select class="input" id="q-city" name="city" autocomplete="address-level2">
+              <option value="">Choose a city</option>
+              <option>Arroyo Grande</option><option>Atascadero</option><option>Avila Beach</option><option>Cambria</option><option>Cayucos</option><option>Grover Beach</option><option>Los Osos</option><option>Morro Bay</option><option>Nipomo</option><option>Oceano</option><option>Paso Robles</option><option>Pismo Beach</option><option>San Luis Obispo</option><option>Santa Margarita</option><option>Templeton</option><option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-vehicle">Vehicle</label>
+            <input class="input" id="q-vehicle" name="vehicle" type="text" autocomplete="off" placeholder="Year, make and model…">
+          </div>
+          <div class="field">
+            <label for="q-service">Service</label>
+            <select class="input" id="q-service" name="service">
+              <option value="">Choose a service</option>
+              <option>Curb rash and scrape repair</option><option>Scratch and gouge repair</option><option>Painted-wheel refinishing (factory color match)</option><option>Color change or custom finish</option><option>Lease-return wheel repair</option><option>Brake caliper painting</option><option>Not sure</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="q-message">What happened?</label>
+            <textarea class="input" id="q-message" name="message" rows="5" placeholder="Which wheels, the damage, the wheel size and finish."></textarea>
+          </div>
+          <div class="field full">
+            <label for="q-photo">Photo</label>
+            <input class="input" id="q-photo" name="attachment" type="file" accept="image/*" aria-describedby="q-photo-help q-photo-err">
+            <p class="help" id="q-photo-help">One image, up to 10&nbsp;MB. More photos? Email them to support@slocountywheels.com.</p>
+            <p class="err" id="q-photo-err"></p>
+          </div>
+          <div class="full form-foot">
+            <button class="btn btn-primary" type="submit">Send quote request</button>
+            <p class="help">Sent to SLO County Wheels by email through FormSubmit.</p>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -529,24 +724,240 @@ h3 { font-size: var(--fs-lead); line-height: 1.3; font-weight: 600; letter-spaci
       <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="32" r="21" fill="none" stroke="currentColor" stroke-width="2"/><path d="M32 23V12M40.6 29.2 51 25.8M37.3 39.3 43.8 48.2M26.7 39.3 20.2 48.2M23.4 29.2 13 25.8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="32" r="5" fill="var(--accent)"/></svg>
       SLO County Wheels
     </a>
+    <span>Mobile wheel repair, San&nbsp;Luis&nbsp;Obispo County, CA</span>
     <a href="mailto:support@slocountywheels.com">support@slocountywheels.com</a>
-    <div class="foot-meta">
-      <span>Mobile wheel repair · San&nbsp;Luis&nbsp;Obispo County, CA</span>
-      <span>© 2026 SLO County Wheels</span>
-    </div>
+    <span>© 2026 SLO County Wheels</span>
   </div>
 </footer>
 
+<button class="msg-launch" id="msg-launch" type="button" aria-expanded="false" aria-controls="msg-panel">
+  <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M168,112a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,112Zm-8,24H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm72-8A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"/></svg>
+  Message us
+</button>
+<div class="msg-panel" id="msg-panel" role="dialog" aria-modal="true" aria-labelledby="msg-title" aria-describedby="msg-desc">
+  <div class="msg-head">
+    <div>
+      <h2 id="msg-title">Message SLO County Wheels</h2>
+      <p id="msg-desc">We reply by email.<span id="msg-req"> All fields are required.</span></p>
+    </div>
+    <button class="icon-btn" type="button" id="msg-close" aria-label="Close message form">
+      <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
+    </button>
+  </div>
+  <form class="msg-form" id="msg-form" novalidate>
+    <div class="hp" aria-hidden="true"><label for="m-honey">Leave this empty</label><input type="text" id="m-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
+    <div class="field">
+      <label for="m-name">Name</label>
+      <input class="input" id="m-name" name="name" type="text" autocomplete="name" required aria-describedby="m-name-err">
+      <p class="err" id="m-name-err"></p>
+    </div>
+    <div class="field">
+      <label for="m-email">Email</label>
+      <input class="input" id="m-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required aria-describedby="m-email-err">
+      <p class="err" id="m-email-err"></p>
+    </div>
+    <div class="field">
+      <label for="m-message">Message</label>
+      <textarea class="input" id="m-message" name="message" rows="4" required aria-describedby="m-message-err"></textarea>
+      <p class="err" id="m-message-err"></p>
+    </div>
+    <button class="btn btn-primary" type="submit">Send message</button>
+    <p class="msg-status" id="msg-status" role="status" aria-live="polite"></p>
+  </form>
+  <div class="msg-done" id="msg-done" hidden tabindex="-1">
+    <h3>Message sent.</h3>
+    <p>Thanks. We’ll reply by email.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script>
-document.querySelectorAll('.menu-panel a').forEach(a => a.addEventListener('click', () => a.closest('details').open = false));
-document.addEventListener('keydown', e => { const m = document.querySelector('.menu[open]'); if (e.key === 'Escape' && m) { m.open = false; m.querySelector('summary').focus(); } });
-document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
-  const t = b.dataset.copy, label = b.firstElementChild; let ok = false;
-  try { await navigator.clipboard.writeText(t); ok = true; } catch (e) { const x = document.createElement('textarea'); x.value = t; x.setAttribute('readonly', ''); x.style.cssText = 'position:fixed;top:0;opacity:0'; document.body.append(x); x.select(); try { ok = document.execCommand('copy'); } catch (_) {} x.remove(); b.focus(); }
-  if (!ok) getSelection().selectAllChildren(b.previousElementSibling);
-  label.textContent = ok ? 'Copied' : 'Selected. Copy it manually'; b.classList.toggle('done', ok);
-  clearTimeout(b.t); b.t = setTimeout(() => { label.textContent = 'Copy email'; b.classList.remove('done'); }, ok ? 2200 : 6000);
-}));
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const EMAIL = 'support@slocountywheels.com';
+
+  /* Mobile menu */
+  $$('.menu-panel a').forEach(a => a.addEventListener('click', () => a.closest('details').open = false));
+  document.addEventListener('pointerdown', e => { const m = $('.menu[open]'); if (m && !m.contains(e.target)) m.open = false; });
+
+  /* Copy email */
+  $$('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+    const t = b.dataset.copy, label = b.firstElementChild; let ok = false;
+    try { await navigator.clipboard.writeText(t); ok = true; } catch (e) {}
+    label.textContent = ok ? 'Copied' : 'Select and copy it'; b.classList.toggle('done', ok);
+    if (!ok) getSelection().selectAllChildren(b.previousElementSibling);
+    clearTimeout(b.t); b.t = setTimeout(() => { label.textContent = 'Copy email'; b.classList.remove('done'); }, ok ? 2200 : 6000);
+  }));
+
+  /* Before / after */
+  const ba = $('.ba'), range = $('.ba input');
+  // Thumb centre of the inset range: 28px at 3, W-28px at 97.
+  const at = v => `calc(28px + ${(v - 3) / 94} * (100% - 56px))`;
+  range.addEventListener('input', () => {
+    const v = +range.value; ba.dataset.touched = 1;
+    ba.style.setProperty('--pos', at(v));
+    range.setAttribute('aria-valuetext', `${v} percent before, ${100 - v} percent after`);
+  });
+
+  /* Inline validation shared by both forms */
+  const msgFor = el => {
+    if (el.validity.valueMissing) return el.type === 'email' ? 'Enter your email address.' : `Enter your ${el.name === 'message' ? 'message' : el.name}.`;
+    if (el.validity.typeMismatch) return 'Enter an email address like name@example.com.';
+    return '';
+  };
+  const check = el => {
+    const err = document.getElementById(el.id + '-err'); if (!err) return true;
+    let m = msgFor(el);
+    if (!m && el.type === 'file' && el.files[0] && el.files[0].size > 10 * 1024 * 1024) m = 'That photo is over 10 MB. Choose a smaller one, or email it to us.';
+    err.textContent = m; m ? el.setAttribute('aria-invalid', 'true') : el.removeAttribute('aria-invalid');
+    return !m;
+  };
+  const wire = form => {
+    form.noValidate = true;
+    $$('input[required], textarea[required], input[type=file]', form).forEach(el => {
+      el.addEventListener('blur', () => { if (el.value || el.dataset.seen) { el.dataset.seen = 1; check(el); } });
+      el.addEventListener('input', () => { if (el.getAttribute('aria-invalid')) check(el); });
+      el.addEventListener('change', () => { if (el.type === 'file') check(el); });
+    });
+  };
+  const validate = form => {
+    const bad = $$('input[required], textarea[required], input[type=file]', form).filter(el => !check(el));
+    if (bad.length) bad[0].focus();
+    return !bad.length;
+  };
+
+  /* Contact form */
+  const quote = $('#quote-form'), sent = $('#sent');
+  wire(quote);
+  quote.addEventListener('submit', e => { if (!validate(quote)) e.preventDefault(); else quote.querySelector('[type=submit]').textContent = 'Sending…'; });
+  addEventListener('pageshow', e => { if (e.persisted) quote.querySelector('[type=submit]').textContent = 'Send quote request'; });
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    quote.hidden = true; sent.hidden = false;
+    history.replaceState(null, '', location.pathname + '#contact');
+    addEventListener('load', () => setTimeout(() => { sent.scrollIntoView({ behavior: 'instant', block: 'center' }); sent.focus({ preventScroll: true }); }, 0));
+  }
+
+  /* Messenger */
+  const launch = $('#msg-launch'), panel = $('#msg-panel'), close = $('#msg-close');
+  const mform = $('#msg-form'), mstatus = $('#msg-status'), mdone = $('#msg-done');
+  wire(mform);
+  const focusables = () => $$('button, input:not([tabindex="-1"]), textarea, a[href]', panel).filter(el => !el.disabled && !el.closest('[hidden]') && el.offsetParent !== null);
+  const bg = $$('.skip, .site-header, main, .site-footer');
+  const seen = new Set();
+  const setOpen = open => {
+    panel.classList.toggle('open', open);
+    launch.setAttribute('aria-expanded', open);
+    panel.inert = !open; bg.forEach(el => el.inert = open);
+    if (open) { setTimeout(() => (mdone.hidden ? $('#m-name') : mdone).focus(), 30); return; }
+    if (seen.size) { launch.classList.add('away'); const h = $('h2', [...seen][0]) || $('#contact-title'); h.tabIndex = -1; h.focus({ preventScroll: true }); }
+    else launch.focus();
+  };
+  panel.inert = true;
+  launch.addEventListener('click', () => setOpen(!panel.classList.contains('open')));
+  document.addEventListener('pointerdown', e => { if (panel.classList.contains('open') && !panel.contains(e.target) && !launch.contains(e.target)) setOpen(false); });
+  close.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (panel.classList.contains('open')) { setOpen(false); return; }
+      const m = $('.menu[open]'); if (m) { m.open = false; m.querySelector('summary').focus(); }
+    }
+    if (e.key === 'Tab' && panel.classList.contains('open')) {
+      const f = focusables(), first = f[0], last = f[f.length - 1];
+      if (!f.includes(document.activeElement)) { e.preventDefault(); (e.shiftKey ? last : first).focus(); }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  mform.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!validate(mform)) return;
+    const btn = mform.querySelector('[type=submit]'), d = Object.fromEntries(new FormData(mform));
+    mstatus.className = 'msg-status'; mstatus.textContent = '';
+    const showDone = () => { mform.reset(); mform.hidden = true; $('#msg-req').hidden = true; mdone.hidden = false; mdone.focus(); };
+    if (d._honey) { showDone(); return; }
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try {
+      const r = await fetch('https://formsubmit.co/ajax/' + EMAIL, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        signal: AbortSignal.timeout ? AbortSignal.timeout(15000) : undefined,
+        body: JSON.stringify({
+          name: d.name, email: d.email, message: d.message,
+          _subject: 'Website message | slocountywheels.com', _template: 'table', _honey: ''
+        })
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || String(j.success) !== 'true') throw 0;
+      showDone();
+    } catch (_) {
+      mstatus.className = 'msg-status bad';
+      mstatus.innerHTML = `Your message didn’t send. Please email <a href="mailto:${EMAIL}">${EMAIL}</a>.`;
+    } finally {
+      btn.disabled = false; btn.textContent = 'Send message';
+      if (document.activeElement === document.body && !mform.hidden) btn.focus();
+    }
+  });
+  /* Keep the bubble off the before/after caption, the contact form and the footer */
+  const io = new IntersectionObserver(es => {
+    es.forEach(x => x.isIntersecting ? seen.add(x.target) : seen.delete(x.target));
+    launch.classList.toggle('away', seen.size > 0 && !panel.classList.contains('open'));
+  });
+  ['#compare', '#contact', '.site-footer'].forEach(q => io.observe($(q)));
+  // Narrow phones: the bubble would sit on the FAQ + icons, so it steps aside there too.
+  if (matchMedia('(max-width: 360px)').matches) io.observe($('#faq'));
+
+  /* Motion: GSAP, only when motion is welcome. Nothing is hidden before JS runs. */
+  addEventListener('DOMContentLoaded', () => {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const mm = gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      const ease = 'expo.out';
+      // Hero: CSS settles .hero-zoom at first paint; GSAP only moves the img inside it, so the two never share a transform.
+      gsap.fromTo('.hero-media img', { yPercent: -4 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: '.hero-media', start: 'top bottom', end: 'bottom top', scrub: true } });
+
+      // Only hide what starts below the fold, so nothing already painted disappears.
+      const below = el => el.getBoundingClientRect().top > innerHeight;
+      const reveal = $$('[data-reveal]').filter(below);
+      // opacity, not autoAlpha: unrevealed content must stay keyboard-focusable.
+      if (reveal.length) gsap.set(reveal, { opacity: 0, y: 18 });
+      if (reveal.length) ScrollTrigger.batch(reveal, {
+        start: 'top 90%', once: true, batchMax: 4, interval: 0.1,
+        onEnter: els => {
+          const past = els.filter(e => e.getBoundingClientRect().bottom < 0);
+          const rest = els.filter(e => !past.includes(e));
+          if (past.length) gsap.set(past, { opacity: 1, y: 0 });
+          if (rest.length) gsap.to(rest, { opacity: 1, y: 0, duration: 1, ease, stagger: 0.08, overwrite: true });
+        }
+      });
+
+      $$('[data-photo]').filter(below).forEach(fig => {
+        const img = fig.querySelector('img');
+        gsap.set(fig, { clipPath: 'inset(12% 0% 0% 0%)' });
+        gsap.set(img, { scale: 1.08 });
+        ScrollTrigger.create({
+          trigger: fig, start: 'top 88%', once: true,
+          onEnter: () => { gsap.to(fig, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.4, ease }); gsap.to(img, { scale: 1, duration: 1.6, ease }); }
+        });
+      });
+
+      // One out-and-back hint on the slider; stops the moment the visitor takes over.
+      const s = { v: 52 };
+      let hint, stopped = false;
+      const stop = () => { stopped = true; if (hint) { hint.kill(); hint = null; ba.style.setProperty('--pos', at(+range.value)); } };
+      ['pointerdown', 'focus', 'input'].forEach(t => range.addEventListener(t, stop));
+      ScrollTrigger.create({
+        trigger: ba, start: 'top 65%', once: true,
+        onEnter: () => {
+          if (stopped) return;
+          hint = gsap.to(s, { v: 60, duration: 0.45, ease: 'power2.inOut', yoyo: true, repeat: 1, delay: 0.3, onUpdate: () => ba.style.setProperty('--pos', at(s.v)) });
+        }
+      });
+
+      $$('.faq details').forEach(d => d.addEventListener('toggle', () => ScrollTrigger.refresh()));
+    });
+  });
+})();
 </script>
 </body>
 </html>
